@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NaturoSynth-Website/static/css/main.073c9b0a.css",
+    "main.js": "/NaturoSynth-Website/static/js/main.affe9313.js",
+    "static/js/787.28cb0dcd.chunk.js": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/NaturoSynth-Website/index.html",
+    "main.073c9b0a.css.map": "/NaturoSynth-Website/static/css/main.073c9b0a.css.map",
+    "main.affe9313.js.map": "/NaturoSynth-Website/static/js/main.affe9313.js.map",
+    "787.28cb0dcd.chunk.js.map": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.affe9313.js"
+  ]
+}
