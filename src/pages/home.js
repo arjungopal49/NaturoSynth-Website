@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             <h1>
-                hi arjun ginda rizzler 
+                Welcome to the new NaturoSynth website
             </h1>
         </div>
     );
