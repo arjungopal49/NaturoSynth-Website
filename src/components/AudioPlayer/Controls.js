@@ -90,41 +90,21 @@ const Controls = ({
                 <button onClick={handlePrevious}>
                     <IoPlaySkipBackSharp />
                 </button>
-                <button onClick={skipBackward}>
-                    <IoPlayBackSharp />
-                </button>
+                {/*<button onClick={skipBackward}>*/}
+                {/*    <IoPlayBackSharp />*/}
+                {/*</button>*/}
 
                 <button onClick={togglePlayPause}>
                     {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
                 </button>
-                <button onClick={skipForward}>
-                    <IoPlayForwardSharp />
-                </button>
+                {/*<button onClick={skipForward}>*/}
+                {/*    <IoPlayForwardSharp />*/}
+                {/*</button>*/}
                 <button onClick={handleNext}>
                     <IoPlaySkipForwardSharp />
                 </button>
             </div>
-            <div className="volume">
-                <button onClick={() => setMuteVolume((prev) => !prev)}>
-                    {muteVolume || volume < 5 ? (
-                        <IoMdVolumeOff />
-                    ) : volume < 40 ? (
-                        <IoMdVolumeLow />
-                    ) : (
-                        <IoMdVolumeHigh />
-                    )}
-                </button>
-                <input
-                    type="range"
-                    min={0}
-                    max={100}
-                    value={volume}
-                    onChange={(e) => setVolume(e.target.value)}
-                    style={{
-                        background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
-                    }}
-                />
-            </div>
+
         </div>
     );
 };

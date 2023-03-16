@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+
 const ProgressBar = ({
                          progressBarRef,
                          audioRef,
@@ -7,6 +9,14 @@ const ProgressBar = ({
     const handleProgressChange = () => {
         audioRef.current.currentTime = progressBarRef.current.value;
     };
+
+    const getBackgroundSize = () => {
+        return {
+            backgroundSize: `${(timeProgress * 100) / duration}% 100%`,
+        };
+    };
+
+
 
     const formatTime = (time) => {
         if (time && !isNaN(time)) {
@@ -21,6 +31,7 @@ const ProgressBar = ({
         return '00:00';
     };
 
+
     return (
         <div className="progress">
             <span className="time current">{formatTime(timeProgress)}</span>
@@ -29,6 +40,7 @@ const ProgressBar = ({
                 ref={progressBarRef}
                 defaultValue="0"
                 onChange={handleProgressChange}
+                style={getBackgroundSize()}
             />
             <span className="time">{formatTime(duration)}</span>
         </div>

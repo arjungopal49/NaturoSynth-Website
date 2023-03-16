@@ -5,9 +5,10 @@ import { tracks } from '../../data/tracks';
 import DisplayTrack from './DisplayTrack';
 import Controls from './Controls';
 import ProgressBar from './ProgressBar';
+import TrackList from './TrackList';
 // import TopBar from './TopBar';
-import './styles.css'
-
+import './styles.css';
+import React from 'react';
 const AudioPlayer = () => {
     // states
     const [trackIndex, setTrackIndex] = useState(0);
@@ -33,34 +34,51 @@ const AudioPlayer = () => {
 
     return (
         <>
+            <div>
+
+            </div>
             <div className="audio-player">
-                <div className="inner">
-                    <DisplayTrack
-                        {...{
-                            currentTrack,
-                            audioRef,
-                            setDuration,
-                            progressBarRef,
-                            handleNext,
-                        }}
-                    />
-                    <Controls
-                        {...{
-                            audioRef,
-                            progressBarRef,
-                            duration,
-                            setTimeProgress,
-                            tracks,
-                            trackIndex,
-                            setTrackIndex,
-                            setCurrentTrack,
-                            handleNext,
-                        }}
-                    />
-                    <ProgressBar
-                        {...{ progressBarRef, audioRef, timeProgress, duration }}
-                    />
+                <div className="current-player">
+                        <div className="audio-image">
+                            <img src={currentTrack.thumbnail} alt="audio avatar" />
+                        </div>
+                        <div className="right-side-of-coverart">
+                            <DisplayTrack
+                                {...{
+                                    currentTrack,
+                                    audioRef,
+                                    setDuration,
+                                    progressBarRef,
+                                    handleNext,
+                                }}
+                            />
+                            <ProgressBar
+                                {...{ progressBarRef, audioRef, timeProgress, duration }}
+                            />
+                            <Controls
+                                {...{
+                                    audioRef,
+                                    progressBarRef,
+                                    duration,
+                                    setTimeProgress,
+                                    tracks,
+                                    trackIndex,
+                                    setTrackIndex,
+                                    setCurrentTrack,
+                                    handleNext,
+                                }}
+                            />
+                        </div>
+
                 </div>
+                <TrackList
+                    {...{
+                        tracks,
+                        trackIndex,
+                        setTrackIndex,
+                        setCurrentTrack,
+                    }}
+                />
             </div>
         </>
     );

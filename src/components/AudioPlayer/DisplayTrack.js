@@ -21,23 +21,8 @@ const DisplayTrack = ({
                 onLoadedMetadata={onLoadedMetadata}
                 onEnded={handleNext}
             />
-            <div className="audio-info">
-                <div className="audio-image">
-                    {currentTrack.thumbnail ? (
-                        <img src={currentTrack.thumbnail} alt="audio avatar" />
-                    ) : (
-                        <div className="icon-wrapper">
-              <span className="audio-icon">
-                <BsMusicNoteBeamed />
-              </span>
-                        </div>
-                    )}
-                </div>
-                <div className="text">
-                    <p className="title">{currentTrack.title}</p>
-                    <p>{currentTrack.author}</p>
-                </div>
-            </div>
+            <p className="title">{currentTrack.title}</p>
+            <p className="audio-author-text">{currentTrack.author}</p>
         </div>
     );
 };
