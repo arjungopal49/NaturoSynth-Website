@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const ProgressBar = ({
                          progressBarRef,
@@ -16,14 +16,25 @@ const ProgressBar = ({
         };
     };
 
+    const [timeRemaining, setTimeRemaining] = useState(false);
 
+    const toggleEndingTime = () => {
+        setTimeRemaining(!timeRemaining);
+    }
 
-    const formatTime = (time) => {
+    const formatTime = (time, endingTime) => {
         if (time && !isNaN(time)) {
-            const minutes = Math.floor(time / 60);
-            const formatMinutes =
-                minutes < 10 ? `0${minutes}` : `${minutes}`;
-            const seconds = Math.floor(time % 60);
+
+            let minutes = Math.floor(time / 60);
+            let seconds = Math.floor(time % 60);
+            let formatMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+
+            if (endingTime && timeRemaining) {
+                minutes = Math.floor((time - timeProgress) / 60)
+                seconds = Math.floor((time - timeProgress) % 60);
+                formatMinutes = minutes < 10 ? `-0${minutes}` : `${minutes}`;
+            }
+
             const formatSeconds =
                 seconds < 10 ? `0${seconds}` : `${seconds}`;
             return `${formatMinutes}:${formatSeconds}`;
@@ -34,7 +45,7 @@ const ProgressBar = ({
 
     return (
         <div className="progress">
-            <span className="time current">{formatTime(timeProgress)}</span>
+            <span className="time current">{formatTime(timeProgress, false)}</span>
             <input
                 type="range"
                 ref={progressBarRef}
@@ -42,7 +53,7 @@ const ProgressBar = ({
                 onChange={handleProgressChange}
                 style={getBackgroundSize()}
             />
-            <span className="time">{formatTime(duration)}</span>
+            <span onClick={toggleEndingTime} className="time">{formatTime(duration, true)}</span>
         </div>
     );
 };
