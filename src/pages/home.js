@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             <h1>
-                hi pranav
+                hi arjun ginda rizzler 
             </h1>
         </div>
     );
