@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/NaturoSynth-Website/static/css/main.073c9b0a.css",
-    "main.js": "/NaturoSynth-Website/static/js/main.affe9313.js",
+    "main.css": "/NaturoSynth-Website/static/css/main.e38b0ecc.css",
+    "main.js": "/NaturoSynth-Website/static/js/main.38e5cedc.js",
     "static/js/787.28cb0dcd.chunk.js": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js",
+    "static/media/ntf16.wav": "/NaturoSynth-Website/static/media/ntf16.da91d0eb34c09b3bd1fd.wav",
+    "static/media/ttm16.wav": "/NaturoSynth-Website/static/media/ttm16.3dba4e42619540cb608e.wav",
+    "static/media/nml16.wav": "/NaturoSynth-Website/static/media/nml16.fc5e698fa3167d310133.wav",
+    "static/media/tn16.wav": "/NaturoSynth-Website/static/media/tn16.f1e9a909d4703b48fc5e.wav",
+    "static/media/image16.wav": "/NaturoSynth-Website/static/media/image16.ee9931bb5e62ae179fc3.wav",
+    "static/media/td16.wav": "/NaturoSynth-Website/static/media/td16.7060a63dd3735461d88e.wav",
+    "static/media/ep-art.jpeg": "/NaturoSynth-Website/static/media/ep-art.e7041f3b7734b4d42e80.jpeg",
+    "static/media/timeless-art.jpg": "/NaturoSynth-Website/static/media/timeless-art.71c4d76708d4e4e90e95.jpg",
+    "static/media/ttm-art.jpeg": "/NaturoSynth-Website/static/media/ttm-art.3c527c0a65ed8165e0ec.jpeg",
+    "static/media/image-art.jpeg": "/NaturoSynth-Website/static/media/image-art.b3709e9c8e639437fcc3.jpeg",
     "index.html": "/NaturoSynth-Website/index.html",
-    "main.073c9b0a.css.map": "/NaturoSynth-Website/static/css/main.073c9b0a.css.map",
-    "main.affe9313.js.map": "/NaturoSynth-Website/static/js/main.affe9313.js.map",
+    "main.e38b0ecc.css.map": "/NaturoSynth-Website/static/css/main.e38b0ecc.css.map",
+    "main.38e5cedc.js.map": "/NaturoSynth-Website/static/js/main.38e5cedc.js.map",
     "787.28cb0dcd.chunk.js.map": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.affe9313.js"
+    "static/css/main.e38b0ecc.css",
+    "static/js/main.38e5cedc.js"
   ]
 }
