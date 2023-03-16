@@ -118,8 +118,9 @@ input[type='range']::-webkit-slider-runnable-track {
 /* time */
 .time {
     color: #ffffff;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 46px;
+    margin-right: .2rem;
 }
 
 
