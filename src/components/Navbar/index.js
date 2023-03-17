@@ -1,11 +1,13 @@
 import React from "react";
-import { Nav, NavLink, NavMenu }
+import {Nav, NavLink, NavMenu, Bars, Image}
     from "./NavbarElements";
+import pic from "../../data/NSLogoWhite.png"
 
 const Navbar = () => {
     return (
         <>
             <Nav>
+                <Image src = {pic}/>
                 <NavMenu>
                     <NavLink to="/" activeStyle>
                         Home
@@ -28,6 +30,7 @@ const Navbar = () => {
                     <NavLink to="/contact" activeStyle>
                         Contact
                     </NavLink>
+                    <Bars/>
                 </NavMenu>
             </Nav>
         </>

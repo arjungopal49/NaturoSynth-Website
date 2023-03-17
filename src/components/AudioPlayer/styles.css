@@ -121,6 +121,7 @@ input[type='range']::-webkit-slider-runnable-track {
     font-size: 11px;
     line-height: 46px;
     margin-right: .2rem;
+    cursor: pointer;
 }
 
 
@@ -134,12 +135,12 @@ input[type='range']::-webkit-slider-runnable-track {
     cursor: pointer;
 }
 
-.songsList-active {
+.songsList-active, .songsList:hover {
     display: flex;
     padding: .2rem;
-    border: 3px solid gold;
+    border: .1rem solid #cefff0;
     border-radius: .4rem;
-    background: #b1f8ff;
+    background: linear-gradient(#8fb8c5, #7d83ad);
     cursor: pointer;
 }
 
@@ -151,8 +152,9 @@ input[type='range']::-webkit-slider-runnable-track {
 
 .songsList p, .songsList-active p {
     color: #000000;
-    font-weight: 100;
+    font-weight: 550;
     padding-left: .4rem;
+
 }
 
 .songsListNumber {
