@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/NaturoSynth-Website/static/css/main.9a786a47.css",
-    "main.js": "/NaturoSynth-Website/static/js/main.58e34e55.js",
+    "main.css": "/NaturoSynth-Website/static/css/main.0b85fb9f.css",
+    "main.js": "/NaturoSynth-Website/static/js/main.63d0e83f.js",
     "static/js/787.28cb0dcd.chunk.js": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js",
     "static/media/ntf16.wav": "/NaturoSynth-Website/static/media/ntf16.da91d0eb34c09b3bd1fd.wav",
     "static/media/ttm16.wav": "/NaturoSynth-Website/static/media/ttm16.3dba4e42619540cb608e.wav",
@@ -14,12 +14,12 @@
     "static/media/ttm-art.jpeg": "/NaturoSynth-Website/static/media/ttm-art.3c527c0a65ed8165e0ec.jpeg",
     "static/media/image-art.jpeg": "/NaturoSynth-Website/static/media/image-art.b3709e9c8e639437fcc3.jpeg",
     "index.html": "/NaturoSynth-Website/index.html",
-    "main.9a786a47.css.map": "/NaturoSynth-Website/static/css/main.9a786a47.css.map",
-    "main.58e34e55.js.map": "/NaturoSynth-Website/static/js/main.58e34e55.js.map",
+    "main.0b85fb9f.css.map": "/NaturoSynth-Website/static/css/main.0b85fb9f.css.map",
+    "main.63d0e83f.js.map": "/NaturoSynth-Website/static/js/main.63d0e83f.js.map",
     "787.28cb0dcd.chunk.js.map": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a786a47.css",
-    "static/js/main.58e34e55.js"
+    "static/css/main.0b85fb9f.css",
+    "static/js/main.63d0e83f.js"
   ]
 }
