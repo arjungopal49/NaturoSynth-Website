@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/NaturoSynth-Website/static/css/main.0b85fb9f.css",
-    "main.js": "/NaturoSynth-Website/static/js/main.63d0e83f.js",
+    "main.css": "/NaturoSynth-Website/static/css/main.408be962.css",
+    "main.js": "/NaturoSynth-Website/static/js/main.4c26c277.js",
     "static/js/787.28cb0dcd.chunk.js": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js",
     "static/media/ntf16.wav": "/NaturoSynth-Website/static/media/ntf16.da91d0eb34c09b3bd1fd.wav",
     "static/media/ttm16.wav": "/NaturoSynth-Website/static/media/ttm16.3dba4e42619540cb608e.wav",
@@ -13,13 +13,14 @@
     "static/media/timeless-art.jpg": "/NaturoSynth-Website/static/media/timeless-art.71c4d76708d4e4e90e95.jpg",
     "static/media/ttm-art.jpeg": "/NaturoSynth-Website/static/media/ttm-art.3c527c0a65ed8165e0ec.jpeg",
     "static/media/image-art.jpeg": "/NaturoSynth-Website/static/media/image-art.b3709e9c8e639437fcc3.jpeg",
+    "static/media/NSLogoWhite.png": "/NaturoSynth-Website/static/media/NSLogoWhite.5a1c27b1ed89047c75ba.png",
     "index.html": "/NaturoSynth-Website/index.html",
-    "main.0b85fb9f.css.map": "/NaturoSynth-Website/static/css/main.0b85fb9f.css.map",
-    "main.63d0e83f.js.map": "/NaturoSynth-Website/static/js/main.63d0e83f.js.map",
+    "main.408be962.css.map": "/NaturoSynth-Website/static/css/main.408be962.css.map",
+    "main.4c26c277.js.map": "/NaturoSynth-Website/static/js/main.4c26c277.js.map",
     "787.28cb0dcd.chunk.js.map": "/NaturoSynth-Website/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b85fb9f.css",
-    "static/js/main.63d0e83f.js"
+    "static/css/main.408be962.css",
+    "static/js/main.4c26c277.js"
   ]
 }
