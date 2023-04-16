@@ -52,22 +52,24 @@ const AudioPlayer = () => {
                                     handleNext,
                                 }}
                             />
-                            <ProgressBar
-                                {...{ progressBarRef, audioRef, timeProgress, duration }}
-                            />
-                            <Controls
-                                {...{
-                                    audioRef,
-                                    progressBarRef,
-                                    duration,
-                                    setTimeProgress,
-                                    tracks,
-                                    trackIndex,
-                                    setTrackIndex,
-                                    setCurrentTrack,
-                                    handleNext,
-                                }}
-                            />
+                            <div className="progressBar-controls-wrapper">
+                                <ProgressBar
+                                    {...{ progressBarRef, audioRef, timeProgress, duration }}
+                                />
+                                <Controls
+                                    {...{
+                                        audioRef,
+                                        progressBarRef,
+                                        duration,
+                                        setTimeProgress,
+                                        tracks,
+                                        trackIndex,
+                                        setTrackIndex,
+                                        setCurrentTrack,
+                                        handleNext,
+                                    }}
+                                />
+                            </div>
                         </div>
 
                 </div>

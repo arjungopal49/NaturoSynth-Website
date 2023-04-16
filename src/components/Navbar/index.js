@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import {Nav, NavLink, NavMenu, Bars, Image}
     from "./NavbarElements";
 import pic from "../../data/NSLogoWhite.png"
 
 const Navbar = () => {
+    const [showNavbar, setShowNavbar] = useState(false)
+
+    const handleShowNavbar = () => {
+        setShowNavbar(!showNavbar)
+    }
+
     return (
         <>
             <Nav>
@@ -30,8 +36,8 @@ const Navbar = () => {
                     <NavLink to="/contact" activeStyle>
                         Contact
                     </NavLink>
-                    <Bars/>
                 </NavMenu>
+                <Bars onClick={handleShowNavbar}/>
             </Nav>
         </>
     );

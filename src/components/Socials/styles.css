@@ -1,12 +1,10 @@
 .socialLogos-container {
-    display: block;
-    justify-content: center;
+    justify-content: space-around;
+    text-align: center;
 }
 
-.logos {
-    padding: .5rem;
-}
-
-.logos {
-    padding: 5rem;
+.logo {
+    border: solid white;
+    border-radius: 2rem;
+    background-color: white;
 }
