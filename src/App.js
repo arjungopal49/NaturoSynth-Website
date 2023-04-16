@@ -14,6 +14,7 @@ import Contact from './pages/contact';
 function App() {
   return (
       <Router>
+
         <Navbar />
         <Routes>
           <Route exact path='/' exact element={<Home />} />

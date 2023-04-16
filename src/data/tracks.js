@@ -26,6 +26,12 @@ export const tracks = [
         thumbnail: ttmArt,
     },
     {
+        title: 'Never Too Far',
+        src: ntf,
+        author: 'NaturoSynth',
+        thumbnail: epArt,
+    },
+    {
         title: 'No More Love',
         src: nml,
         author: 'NaturoSynth',
@@ -42,11 +48,5 @@ export const tracks = [
         src: tn,
         author: 'NaturoSynth',
         thumbnail: timelessArt
-    },
-    {
-        title: 'Never Too Far',
-        src: ntf,
-        author: 'NaturoSynth',
-        thumbnail: epArt,
     },
 ];

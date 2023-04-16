@@ -1,7 +1,6 @@
 import React from "react";
 import profilePic1 from '../../data/profilepic2.JPG'
 import './styles.css';
-import SocialLogos from "../Socials/SocialLogos";
 
 const Biography = ({bio}) => {
     return (
@@ -13,7 +12,6 @@ const Biography = ({bio}) => {
                     {bio}
                 </p>
             </div>
-
         </div>
     );
 };
