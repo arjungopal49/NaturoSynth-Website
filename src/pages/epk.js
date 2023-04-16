@@ -8,6 +8,7 @@ import SocialLogos from "../components/Socials/SocialLogos";
 import EPKMusicVideos from "../components/EPKMusicVideos/EPKMusicVideos";
 import PressPhotos from "../components/PressPhotos/PressPhotos";
 import EPKContact from "../components/EPKContact/EPKContact";
+import FeaturedOn from "../components/FeaturedOn/FeaturedOn";
 
 const EPK = () => {
     return (
@@ -18,6 +19,7 @@ const EPK = () => {
                 <PopularSongs desc={"Our popular tracks come from \"In Control\", our latest EP. \"In Control\" is a collection of 6 pop songs with elements of funk and psychedelia sprinkled all over it. From the driving 80’s inspired electronic drums, clean funk rhythm guitar and the swelling synthesizers of “Through the Motions”, to the smooth bass guitar riffs, groovy conga rhythms and ambient keys of “No More Love”, each song displays a new sound pallet and thematically, provides a new perspective on the emotional effects of a significant other. The EP dives into how someone may manipulate your mind either positively or negatively in ways you may or may not be able to control."}/>
                 <AudioPlayer/>
             </div>
+            <FeaturedOn/>
             <EPKMusicVideos/>
             <PressPhotos/>
             <EPKContact/>
