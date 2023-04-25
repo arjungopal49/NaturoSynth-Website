@@ -13,19 +13,21 @@ import Contact from './pages/contact';
 
 function App() {
   return (
-      <Router>
+      <div className="App">
+          <Router>
 
-        <Navbar />
-        <Routes>
-          <Route exact path='/' exact element={<Home />} />
-          <Route path='/music' element={<Music/>} />
-          <Route path='/videos' element={<Videos/>} />
-          <Route path='/shows' element={<Shows/>} />
-          <Route path='/merch' element={<Merch/>} />
-          <Route path='/epk' element={<EPK/>} />
-          <Route path='/contact' element={<Contact/>} />
-        </Routes>
-      </Router>
+            <Navbar />
+            <Routes>
+              <Route exact path='/' exact element={<Home />} />
+              <Route path='/music' element={<Music/>} />
+              <Route path='/videos' element={<Videos/>} />
+              <Route path='/shows' element={<Shows/>} />
+              <Route path='/merch' element={<Merch/>} />
+              <Route path='/epk' element={<EPK/>} />
+              <Route path='/contact' element={<Contact/>} />
+            </Routes>
+          </Router>
+      </div>
   );
 }
 

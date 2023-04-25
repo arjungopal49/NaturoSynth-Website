@@ -1,9 +1,10 @@
-.router {
-  text-align: center;
-  position: fixed;
+.App {
+  width: 100%;
+  position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
+
 
 .App-logo {
   height: 40vmin;

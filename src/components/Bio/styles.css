@@ -19,12 +19,12 @@
 }
 
 .bioTxt {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 1.3rem;
     color: white;
-    font-family: Bahnschrift, serif;
+    font-family: "Bahnschrift", serif;
+    /*font-weight: bold;*/
     max-width: 50rem;
-        /*border: .1rem solid #000000;*/
 }
 
 .bioImgTxtDiv {
