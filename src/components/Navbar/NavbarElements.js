@@ -44,6 +44,7 @@ export const NavLink = styled(Link)`
 
   @media screen and (max-width: 768px) {
     padding: 0;
+    font-size: 1rem;
     height: 50%;
   }
   
@@ -80,11 +81,14 @@ export const NavMenu = styled.div`
     right: 0;
     top: 6rem;
     background-color: #000000;
-    width: 10rem;
-    height: calc(100vh - 200px);
-    transition: all 0.3s ease-in;
+    width: 13rem;
+    height: calc(100vh - 6rem);
+    transition: all 0.3s linear;
     overflow: hidden;
     z-index: 90;
-    
+    border: .2rem solid #282c34;
+    border-top: 0;
+    border-right: 0;
+
   }
 `;
