@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './styles.css'
 
 const SpotifyEmbeded = ({ embedId }) => (
-    <div className="video-responsive">
+    <div className="spotify-responsive">
         <iframe
             width="500"
             height="500"

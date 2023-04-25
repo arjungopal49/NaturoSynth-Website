@@ -1,43 +1,61 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Nav, NavLink, NavMenu, Bars, Image}
     from "./NavbarElements";
 import pic from "../../data/NSLogoWhite.png"
 
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(false)
+    const [windowSize, setWindowSize] = useState([
+        window.innerWidth,
+        window.innerHeight,
+    ]);
 
-    const handleShowNavbar = () => {
-        setShowNavbar(!showNavbar)
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowSize([window.innerWidth, window.innerHeight]);
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
+    const handleShowNavbar = (bool) => {
+        setShowNavbar(bool)
     }
 
     return (
         <>
             <Nav>
                 <Image src = {pic}/>
-                <NavMenu>
-                    <NavLink to="/" activeStyle>
-                        Home
-                    </NavLink>
-                    <NavLink to="/music" activeStyle>
-                        Music
-                    </NavLink>
-                    <NavLink to="/videos" activeStyle>
-                        Videos
-                    </NavLink>
-                    <NavLink to="/shows" activeStyle>
-                        Shows
-                    </NavLink>
-                    <NavLink to="/merch" activeStyle>
-                        Merch
-                    </NavLink>
-                    <NavLink to="/EPK" activeStyle>
-                        EPK
-                    </NavLink>
-                    <NavLink to="/contact" activeStyle>
-                        Contact
-                    </NavLink>
-                </NavMenu>
-                <Bars onClick={handleShowNavbar}/>
+                {(showNavbar || windowSize[0] > 768) &&
+                    <NavMenu>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/" activeStyle>
+                            Home
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/music" activeStyle>
+                            Music
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/videos" activeStyle>
+                            Videos
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/shows" activeStyle>
+                            Shows
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/merch" activeStyle>
+                            Merch
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/EPK" activeStyle>
+                            EPK
+                        </NavLink>
+                        <NavLink onClick={() => handleShowNavbar(false)} to="/contact" activeStyle>
+                            Contact
+                        </NavLink>
+                    </NavMenu>
+                }
+                <Bars onClick={() => handleShowNavbar(!showNavbar)}/>
             </Nav>
         </>
     );
