@@ -32,6 +32,10 @@
     cursor: pointer;
 }
 
+.pressImg:hover, .pressImg1:hover, .pressImg4:hover {
+    background-color: #11ddff;
+}
+
 .PressPhotos h1 {
     margin-bottom: 0;
 }
