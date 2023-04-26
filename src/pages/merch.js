@@ -2,9 +2,9 @@ import React from "react";
 
 const Merch = () => {
     return (
-        <div>
+        <div className="merch-full">
             <h1>
-                Buy our new shirts and hoodies
+                New shirts coming soon!
             </h1>
         </div>
     );

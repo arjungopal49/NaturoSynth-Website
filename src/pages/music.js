@@ -3,7 +3,7 @@ import SpotifyEmbeded from "../components/SpotifyEmbeded/SpotifyEmbeded";
 
 const Music = () => {
     return (
-        <div>
+        <div className="music-full">
             <h1>
                 Listen to our new EP "In Control"
             </h1>

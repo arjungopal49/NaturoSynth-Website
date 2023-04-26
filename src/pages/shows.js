@@ -2,7 +2,7 @@ import React from "react";
 
 const Shows = () => {
     return (
-        <div>
+        <div className="shows-full">
             <h1>
                 Catch us live this summer in the Midwest!
             </h1>

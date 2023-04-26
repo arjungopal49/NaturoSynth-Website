@@ -3,7 +3,7 @@ import SocialLogos from "../components/Socials/SocialLogos";
 
 const Home = () => {
     return (
-        <div>
+        <div className="home-full">
             <h1>
                 Welcome to the new NaturoSynth website
             </h1>

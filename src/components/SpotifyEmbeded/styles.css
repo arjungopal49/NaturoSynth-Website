@@ -2,5 +2,10 @@
     max-width: 32rem;
     justify-content: center;
     margin: auto;
-    padding: .2rem;
+    height: 25rem;
+    scale: 90%;
+}
+.spotify-responsive iframe {
+    height: 100%;
+    width: 100%;
 }

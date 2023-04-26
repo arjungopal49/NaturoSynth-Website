@@ -1,7 +1,11 @@
 .epk-full {
-    background-image: linear-gradient(to bottom right, #bf64f8, #a2942c);
+    background-image: linear-gradient(to right, #bf64f8, #B17D92);
     justify-content: center;
     margin: auto;
+}
+
+.epk-full h1{
+    font-family: Arial, sans-serif;
 }
 
 .epk-popTracksAudioPlayerDiv {
@@ -12,6 +16,18 @@
     max-width: 90rem;
     margin: auto;
 }
+
+.home-full, .music-full, .videos-full, .shows-full, .merch-full, .contact-full {
+    justify-content: center;
+
+}
+.home-full h1, .music-full h1, .videos-full h1, .shows-full h1, .merch-full h1, .contact-full h1{
+    color: black;
+}
+
+
+
+
 
 
 

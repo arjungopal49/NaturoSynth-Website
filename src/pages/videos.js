@@ -3,7 +3,7 @@ import YouTubeEmbeded from "../components/YouTubeEmbeded/YouTubeEmbeded";
 
 const Videos = () => {
     return (
-        <div>
+        <div className="videos-full">
             <h1>
                 Check out our videos:
             </h1>

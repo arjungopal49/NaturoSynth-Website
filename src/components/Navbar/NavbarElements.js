@@ -31,7 +31,8 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  font-family: "Arial Black", monospace;
+  font-family: "Arial Black", sans-serif;
+  font-weight: bold;
   font-size: 1.2rem;
 
   &.active {
