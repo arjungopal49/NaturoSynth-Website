@@ -1,10 +1,20 @@
 .socialLogos-container {
     justify-content: space-around;
     text-align: center;
+    margin: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .logo {
     border: solid white;
     border-radius: 2rem;
     background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .socialLogos-container {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
 }

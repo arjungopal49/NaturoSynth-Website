@@ -2,11 +2,13 @@
 }
 
 body {
+
     font-family: "Trebuchet MS", sans-serif;
     margin: 0 10px;
 }
 
 .audio-player {
+    text-align: left;
     max-width: 45rem;
     margin: 0 auto;
     padding: 1rem;
@@ -157,4 +159,33 @@ input[type='range']::-webkit-slider-runnable-track {
 
 .songsListNumber {
     margin-right: .4rem;
+}
+
+@media screen and (max-width: 500px) {
+    .audio-player {
+        scale: 95%;
+        border-radius: 25px;
+        border: .2rem solid #000000;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .current-player {
+        display: initial;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .right-side-of-coverart {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .audio-image {
+        margin: auto;
+        width: 10rem;
+        height: 10rem;
+    }
 }

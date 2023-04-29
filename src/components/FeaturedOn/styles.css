@@ -38,3 +38,13 @@
     justify-content: center;
     margin: auto;
 }
+
+@media screen and (max-width: 500px) {
+    .featuredOnTxt {
+        font-size: .7rem;
+    }
+
+    .featuredOn h1 {
+        margin-top: 2rem;
+    }
+}
