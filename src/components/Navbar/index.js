@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <>
             <Nav>
-                <a href="/"><Image src = {pic} height="94" width="156" /></a>
+                <a href="/"><Image src = {pic} /></a>
                 {(showNavbar || windowSize[0] > 768) &&
                     <NavMenu>
                         <NavLink onClick={() => handleShowNavbar(false)} to="/" activeStyle>
