@@ -19,8 +19,19 @@
     margin: auto;
 }
 
+.epk-socialGrowthDiv {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+    position:relative;
+    max-width: 70rem;
+    margin: auto;
+}
+
+
 .home-full, .music-full, .videos-full, .shows-full, .merch-full, .contact-full {
     justify-content: center;
+    text-align: center;
 
 }
 .home-full h1, .music-full h1, .videos-full h1, .shows-full h1, .merch-full h1, .contact-full h1{
