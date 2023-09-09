@@ -15,6 +15,8 @@ import livePic3LowRes from '../../data/bigJunbassLowRes.png'
 import livePic4LowRes from '../../data/JunRedBacklightLowRes.png'
 import livePic5LowRes from '../../data/PJfrontKieranBackGreenLowRes.png'
 import livePic6LowRes from '../../data/KieranGuitarLowRes.png'
+import profilePic4 from '../../data/KieranOnWall.png'
+import profilePic5 from '../../data/ByWater.png'
 
 
 const PressPhotos = () => {
@@ -51,6 +53,9 @@ const PressPhotos = () => {
                 <img onClick={() => handleClick(profilePic1)} className="pressImg1" src={profilePic1} alt={""}/>
                 <img onClick={() => handleClick(profilePic2)} className="pressImg" src={profilePic2} alt={""}/>
                 <img onClick={() => handleClick(livePic4)}  className="pressImg4" src={livePic4LowRes} alt={""}/>
+                <img onClick={() => handleClick(profilePic4)} className="pressImg" src={profilePic4} alt={""}/>
+                <img onClick={() => handleClick(profilePic5)} className="pressImg" src={profilePic5} alt={""}/>
+                
             </div>
         </div>
     );

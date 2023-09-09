@@ -16,6 +16,10 @@ const FeaturedOn = () => {
                     <a href="https://open.spotify.com/playlist/33g9HtxlX4TuqbGAZMnzuF" target="_blank">Playlist: South Asian Indie (>6K followers) [2023]</a>
                 </p>
                 <p className="featuredOnTxt">
+                    <SocialIcon className="iconBulletPoint" url={"https://chirpradio.org/podcasts/naturosynth-interview"} network={"itunes"} target="_blank"/>
+                    <a href="https://chirpradio.org/podcasts/naturosynth-interview" target="_blank">Radio: Chirp Radio Podcast Interview [2023]</a>
+                </p>
+                <p className="featuredOnTxt">
                     <SocialIcon className="iconBulletPoint" url={"https://drive.google.com/file/d/1wVUUBo4I2DvUhbtmlO1C8JK__hO7pnot/view"} network={"itunes"} target="_blank"/>
                     <a href="https://drive.google.com/file/d/1wVUUBo4I2DvUhbtmlO1C8JK__hO7pnot/view" target="_blank">Radio: Rukus Avenue Radio (>9M monthly listeners) [2021]</a>
                 </p>
