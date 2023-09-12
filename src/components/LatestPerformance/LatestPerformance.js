@@ -1,11 +1,11 @@
 import React from "react";
 import './styles.css';
 import mapIcon from "../../data/mapIcon.png";
-import annexPic1 from "../../data/annex1.png";
-import annexPic2 from "../../data/annex2.png";
-import annexPic3 from "../../data/annex3.png";
-import annexPic4 from "../../data/annex4.png";
-import annexPic5 from "../../data/annex5.png";
+import annexPic1 from "../../data/annex1-min.png";
+import annexPic2 from "../../data/annex2-min.png";
+import annexPic3 from "../../data/annex3-min.png";
+import annexPic4 from "../../data/annex4-min.png";
+import annexPic5 from "../../data/annex5-min.png";
 
 
 const LatestPerformance = () => {
