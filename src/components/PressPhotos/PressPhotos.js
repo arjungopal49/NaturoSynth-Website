@@ -53,8 +53,8 @@ const PressPhotos = () => {
                 <img onClick={() => handleClick(profilePic1)} className="pressImg1" src={profilePic1} alt={""}/>
                 <img onClick={() => handleClick(profilePic2)} className="pressImg" src={profilePic2} alt={""}/>
                 <img onClick={() => handleClick(livePic4)}  className="pressImg4" src={livePic4LowRes} alt={""}/>
-                <img onClick={() => handleClick(profilePic4)} className="pressImg" src={profilePic4} alt={""}/>
-                <img onClick={() => handleClick(profilePic5)} className="pressImg" src={profilePic5} alt={""}/>
+                {/*<img onClick={() => handleClick(profilePic4)} className="pressImg" src={profilePic4} alt={""}/>*/}
+                {/*<img onClick={() => handleClick(profilePic5)} className="pressImg" src={profilePic5} alt={""}/>*/}
                 
             </div>
         </div>
