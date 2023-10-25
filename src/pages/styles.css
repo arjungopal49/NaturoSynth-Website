@@ -28,6 +28,12 @@
     margin: auto;
 }
 
+.Home-full {
+    background-image: "bigJunbass2.png";
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
 
 .home-full, .music-full, .videos-full, .shows-full, .merch-full, .contact-full {
     justify-content: center;
@@ -39,6 +45,16 @@
 }
 
 
+.Background {
+    background-image: url('/src/data/concert.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: auto;
+    width: auto;
+  }
 
 
 
