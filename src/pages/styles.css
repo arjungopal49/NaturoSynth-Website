@@ -51,10 +51,9 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: auto;
-    width: auto;
-  }
+    height: 100vh; 
+    width: 100%; 
+}
 
 
 
