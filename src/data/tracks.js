@@ -5,14 +5,22 @@ import td from './td16.wav';
 import ntf from './ntf16.wav';
 import nml from './nml16.wav';
 import tn from './tn16.wav';
+import ho from './ho16.wav'
 
 // cover artrs
 import imageArt from './image-art.jpeg';
 import ttmArt from './ttm-art.jpeg';
 import timelessArt from './timeless-art.jpg';
 import epArt from './ep-art.jpeg';
+import headphonesArt from './Headphones On Cover Art.png';
 
 export const tracks = [
+    {
+        title: 'Headphones On',
+        src: ho,
+        author: 'NaturoSynth',
+        thumbnail: headphonesArt
+    },
     {
         title: 'The Image',
         src: image,
@@ -38,15 +46,9 @@ export const tracks = [
         thumbnail: epArt,
     },
     {
-        title: 'Telepathic Dream',
-        src: td,
-        author: 'NaturoSynth',
-        thumbnail: epArt,
-    },
-    {
         title: 'Timeless Night',
         src: tn,
         author: 'NaturoSynth',
-        thumbnail: timelessArt
-    },
+        thumbnail: timelessArt,
+    }
 ];

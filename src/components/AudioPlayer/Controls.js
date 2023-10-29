@@ -2,19 +2,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 // icons
 import {
-    IoPlayBackSharp,
-    IoPlayForwardSharp,
     IoPlaySkipBackSharp,
     IoPlaySkipForwardSharp,
     IoPlaySharp,
     IoPauseSharp,
 } from 'react-icons/io5';
-
-import {
-    IoMdVolumeHigh,
-    IoMdVolumeOff,
-    IoMdVolumeLow,
-} from 'react-icons/io';
 
 const Controls = ({
                       audioRef,

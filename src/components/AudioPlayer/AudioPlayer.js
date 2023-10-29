@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { tracks } from '../../data/tracks';
 
 // import components
 import DisplayTrack from './DisplayTrack';
@@ -9,7 +8,7 @@ import TrackList from './TrackList';
 // import TopBar from './TopBar';
 import './styles.css';
 import React from 'react';
-const AudioPlayer = () => {
+const AudioPlayer = ({tracks}) => {
     // states
     const [trackIndex, setTrackIndex] = useState(0);
     const [currentTrack, setCurrentTrack] = useState(
