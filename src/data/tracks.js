@@ -5,7 +5,8 @@ import td from './td16.wav';
 import ntf from './ntf16.wav';
 import nml from './nml16.wav';
 import tn from './tn16.wav';
-import ho from './ho16.wav'
+import ho from './ho16.wav';
+import fr from './for16.wav';
 
 // cover artrs
 import imageArt from './image-art.jpeg';
@@ -13,8 +14,15 @@ import ttmArt from './ttm-art.jpeg';
 import timelessArt from './timeless-art.jpg';
 import epArt from './ep-art.jpeg';
 import headphonesArt from './Headphones On Cover Art.png';
+import fearOfRegretArt from './fear-of-regret-art.jpeg';
 
 export const tracks = [
+    {
+        title: 'Fear of Regret',
+        src: fr,
+        author: 'NaturoSynth',
+        thumbnail: fearOfRegretArt
+    },
     {
         title: 'Headphones On',
         src: ho,
