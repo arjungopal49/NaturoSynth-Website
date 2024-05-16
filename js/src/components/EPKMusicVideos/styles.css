@@ -1,0 +1,16 @@
+.epkMusicVideos {
+    justify-content: center;
+}
+
+.epk-VidContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 70rem;
+    margin: auto;
+}
+
+.epkMusicVideos h1{
+    padding-top: 3rem;
+}

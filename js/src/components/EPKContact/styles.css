@@ -1,0 +1,19 @@
+.EPKContact {
+    justify-content: center;
+    text-align: center;
+}
+
+.EPKContact p {
+    color: white;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+
+.EPKContact a {
+    color: #d5f8e6;
+}
+
+.contactText {
+    display: flex;
+    text-align: center;
+}

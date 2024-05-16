@@ -1,23 +1,37 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node.js dependencies
+js/node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Yarn Plug'n'Play files
+.pnp.*
+.js/.pnp.*
 
-# testing
+# Testing coverage reports
 /coverage
 
-# production
+# Production build files
 /build
 
-# misc
+# macOS system files
 .DS_Store
+
+# Local environment files (.env files)
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# npm/yarn debug and error log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# API/Backend - Python virtual environment
+api/env/
+
+# Python bytecode compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Other files and folders to ignore
+# Add other files/folders below as needed
