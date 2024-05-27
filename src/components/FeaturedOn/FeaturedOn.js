@@ -9,7 +9,7 @@ const FeaturedOn = ({featuredOnData}) => {
     }
     return (
         <div className="featuredOn">
-            <h1> Featured On </h1>
+            <h1> Press/Radio </h1>
             <div className="bulletList">
                 {featuredOnData.items.map((feature)=>
                     <p className="featuredOnTxt">

@@ -11,6 +11,8 @@ import FeaturedOn from "../components/FeaturedOn/FeaturedOn";
 import EPKStats from "../components/EPKStats/EPKStats";
 import LatestPerformance from "../components/LatestPerformance/LatestPerformance";
 import {epkData} from "../data/EPKData";
+import TikTokPopular from "../components/TikTokPopular/TikTokPopular";
+import EPKPlaylists from "../components/EPKPlaylists/EPKPlaylists";
 
 const EPK = () => {
     return (
@@ -25,7 +27,11 @@ const EPK = () => {
                 <PopularSongs popularTracksData={epkData.popularTracks}/>
                 <AudioPlayer tracks={epkData.audioPlayer.tracks}/>
             </div>
-            <FeaturedOn featuredOnData={epkData.featuredOn}/>
+            <TikTokPopular tiktoks={epkData.tiktoks}/>
+            <div className="epk-playlistsPressDiv">
+                <EPKPlaylists playlistsData={epkData.playlists}/>
+                <FeaturedOn featuredOnData={epkData.featuredOn}/>
+            </div>
             <EPKMusicVideos epkVideosData={epkData.videos}/>
             <PressPhotos pressPhotosData={epkData.pressPhotos}/>
             <EPKContact/>

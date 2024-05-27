@@ -17,14 +17,14 @@ const EPKMusicVideos = ({epkVideosData}) => {
                     <YouTubeEmbeded embedId={getEmbedId(vid)}/>
                 )}
             </div>
-            <h1>
-                Live Videos
-            </h1>
-            <div className="epk-VidContainer">
-                {epkVideosData.liveVideos.map((vid)=>
-                    <YouTubeEmbeded embedId={getEmbedId(vid)}/>
-                )}
-            </div>
+            {/*<h1>*/}
+            {/*    Live Videos*/}
+            {/*</h1>*/}
+            {/*<div className="epk-VidContainer">*/}
+            {/*    {epkVideosData.liveVideos.map((vid)=>*/}
+            {/*        <YouTubeEmbeded embedId={getEmbedId(vid)}/>*/}
+            {/*    )}*/}
+            {/*</div>*/}
         </div>
     );
 };

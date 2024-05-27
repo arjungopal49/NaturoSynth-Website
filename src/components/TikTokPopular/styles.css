@@ -1,0 +1,42 @@
+.tikTokPopular {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 60rem;
+    margin: auto;
+    justify-content: center;
+}
+
+
+.tiktok-images{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tiktokImg {
+    height: 15rem;
+    width: 11rem;
+    padding: 0.2rem;
+    cursor: pointer;
+    display: block;
+}
+
+.tiktokImg:hover {
+    background-color: #11ddff;
+}
+
+.imageContainer {
+    position: relative;
+    display: inline-block; /* Adjust as needed */
+}
+
+.tiktokLogo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    filter: invert(5);
+}

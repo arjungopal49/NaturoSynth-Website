@@ -1,0 +1,29 @@
+.EPKPlaylists {
+    justify-content: center;
+    max-width: 38rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.EPKPlaylists h1 {
+    text-align: center;
+    color: white;
+    margin-top: 3rem;
+}
+
+.playlistList {
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    margin: auto;
+}
+
+.playlistItem {
+    width: 75%;
+    height: 5rem;
+    padding: 0.1rem;
+}
+.playlistItem:hover {
+    background-color: #ffffff;
+}

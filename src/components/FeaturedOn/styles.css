@@ -1,8 +1,9 @@
 .featuredOn {
     justify-content: center;
-    max-width: 45rem;
+    max-width: 38rem;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
 }
 
 .featuredOnTxt {
@@ -22,7 +23,7 @@
 .featuredOn h1 {
     text-align: center;
     color: white;
-    margin-top: 0;
+    margin-top: 3rem;
 }
 
 .iconBulletPoint {

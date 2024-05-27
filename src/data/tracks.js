@@ -7,6 +7,7 @@ import nml from './nml16.wav';
 import tn from './tn16.wav';
 import ho from './ho16.wav';
 import fr from './for16.wav';
+import dd from './dd16.wav';
 
 // cover artrs
 import imageArt from './image-art.jpeg';
@@ -15,19 +16,26 @@ import timelessArt from './timeless-art.jpg';
 import epArt from './ep-art.jpeg';
 import headphonesArt from './Headphones On Cover Art.png';
 import fearOfRegretArt from './fear-of-regret-art.jpeg';
+import danceArt from './dance-destiny-cover-art.jpg'
 
 export const tracks = [
     {
-        title: 'Fear of Regret',
-        src: fr,
+        title: 'Dance Destiny',
+        src: dd,
         author: 'NaturoSynth',
-        thumbnail: fearOfRegretArt
+        thumbnail: danceArt,
     },
     {
         title: 'Headphones On',
         src: ho,
         author: 'NaturoSynth',
         thumbnail: headphonesArt
+    },
+    {
+        title: 'Fear of Regret',
+        src: fr,
+        author: 'NaturoSynth',
+        thumbnail: fearOfRegretArt
     },
     {
         title: 'The Image',
@@ -52,11 +60,5 @@ export const tracks = [
         src: nml,
         author: 'NaturoSynth',
         thumbnail: epArt,
-    },
-    {
-        title: 'Timeless Night',
-        src: tn,
-        author: 'NaturoSynth',
-        thumbnail: timelessArt,
     }
 ];

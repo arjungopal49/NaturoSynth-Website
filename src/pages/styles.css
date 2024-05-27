@@ -19,6 +19,15 @@
     margin: auto;
 }
 
+.epk-playlistsPressDiv {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+    position:relative;
+    max-width: 90rem;
+    margin: auto;
+}
+
 .epk-socialGrowthDiv {
     display: flex;
     flex-wrap: wrap;

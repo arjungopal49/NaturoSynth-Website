@@ -21,6 +21,16 @@ import livePic5LowRes from './PJfrontKieranBackGreenLowRes.png'
 import livePic6LowRes from './KieranGuitarLowRes.png'
 import {tracks} from "./tracks";
 
+import forTikTok from './fearOfRegretTikTok.png'
+import hoTiktok1 from './headphonesOnTikTok.png'
+import hoTiktok2 from './headphonesOnTikTok2.png'
+import hoTiktok3 from './headphonesOnTikTok3.png'
+import imageTikTok1 from './imageTikTok.png'
+import imageTikTok2 from './imageTikTok2.png'
+import nmlTikTok from './nmlTikTok.png'
+import ttmTikTok from './ttmTikTok.png'
+import ttmTikTok2 from './ttmTikTok2.png'
+
 
 
 
@@ -57,33 +67,55 @@ const latestShowPress = [
     }
 ]
 
-
+const danceDestinyTxt = "Our latest track \"Dance Destiny\" is an electrifying summer anthem that seamlessly intertwines elements of electronic, disco and psych-pop. Inspired by the profound spiritual concept of reincarnation, the song narrates the timeless tale of two souls, destined to meet and dance across multiple lifetimes, bound by an eternal love. With its punchy bass hooks, bouncy drum grooves, infectious melodies, and ethereal synths, \"Dance Destiny\" invites listeners on a transcendental sonic journey. \"Headphones On\" and \"Fear of Regret\" are our two previous singles that have amassed over 300K streams on Spotify and over 1M views on TikTok. Our other popular tracks come from our 2022 EP, \"In Control\"."
 const popularTracksTxt = "Our popular tracks come from \"In Control\", our latest EP. \"In Control\" is a collection of 6 pop songs with elements of funk and psychedelia sprinkled all over it. From the driving 80’s inspired electronic drums, clean funk rhythm guitar and the swelling synthesizers of “Through the Motions”, to the smooth bass guitar riffs, groovy conga rhythms and ambient keys of “No More Love”, each song displays a new sound pallet and thematically, provides a new perspective on the emotional effects of a significant other. The EP dives into how someone may manipulate your mind either positively or negatively in ways you may or may not be able to control.";
 
-const featuredOnItems = [
+const playlists = [
     {
-        icon: "Spotify",
-        description: "Playlist: Indie Rock (>44K followers) [2023]",
-        link: "https://open.spotify.com/playlist/0qYAqOsMGJPntjVEKV5WOF"
+        description: "Playlist: indie pop - happy/chill (>56K followers)",
+        link: "https://open.spotify.com/playlist/0tIHZPCv0MeCb3wnsFllAg",
+        song: "Headphones On",
     },
     {
-        icon: "Spotify",
-        description: "Playlist: South Asian Indie (>6K followers) [2023]",
-        link: "https://open.spotify.com/playlist/33g9HtxlX4TuqbGAZMnzuF?si=d15982b7466346dd"
+        description: "Playlist: Indie Rock (>59K followers)",
+        link: "https://open.spotify.com/playlist/0qYAqOsMGJPntjVEKV5WOF",
+        song: "The Image",
+    },
+    {
+        description: "Playlist: Pop Chillout (>22K followers)",
+        link: "https://open.spotify.com/playlist/4IKoiXaRoT1GqIGm52XJDd",
+        song: "Dance Destiny",
+    },
+    {
+        description: "Playlist: Modern Indie Alt Pop (>29K followers)",
+        link: "https://open.spotify.com/playlist/4bmNkaMUEj2g5J17bMm7GQ",
+        song: "Dance Destiny",
+    },
+    {
+        description: "Playlist: South Asian Indie (>6K followers)",
+        link: "https://open.spotify.com/playlist/33g9HtxlX4TuqbGAZMnzuF?si=d15982b7466346dd",
+        song: "Fear of Regret",
+    }
+]
+const featuredOnItems = [
+    {
+        icon: "sharethis",
+        description: "Article: Wisconsin State Journal Interview",
+        link: "https://madison.com/life-entertainment/local/music/naturosynth-madison-tiktok/article_93236afa-dccb-11ee-805f-e32ca8036159.html"
     },
     {
         icon: "Radio",
-        description: "Radio: Chirp Radio Podcast Interview [2023]",
+        description: "Radio: Chirp Radio Podcast Interview",
         link: "https://chirpradio.org/podcasts/naturosynth-interview"
     },
     {
         icon: "Radio",
-        description: "Radio: Rukus Avenue Radio (>9M monthly listeners) [2021]",
+        description: "Radio: Rukus Avenue Radio Interview",
         link: "https://drive.google.com/file/d/1wVUUBo4I2DvUhbtmlO1C8JK__hO7pnot/view"
     },
     {
         icon: "YouTube",
-        description: "Channel: Terminal Passage (>350K subscribers) [2021]",
+        description: "Channel: Terminal Passage EP Repost",
         link: "https://www.youtube.com/watch?v=7e4uVfJv4yw&t=1152s"
     }
 
@@ -145,6 +177,46 @@ const stats = {
     },
 }
 
+const tiktoks = [
+    {
+        image: hoTiktok1,
+        link: "https://www.tiktok.com/@naturosynth/photo/7285127888360181038?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: ttmTikTok,
+        link: "https://www.tiktok.com/@naturosynth/photo/7223526259257609514?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: imageTikTok1,
+        link: "https://www.tiktok.com/@naturosynth/photo/7238739491651996970?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: hoTiktok2,
+        link: "https://www.tiktok.com/@naturosynth/photo/7282893617545497899?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: forTikTok,
+        link: "https://www.tiktok.com/@naturosynth/photo/7327812760258219310?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: imageTikTok2,
+        link: "https://www.tiktok.com/@naturosynth/photo/7224266682364382510?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: ttmTikTok2,
+        link: "https://www.tiktok.com/@naturosynth/video/7201283771013041454?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: hoTiktok3,
+        link: "https://www.tiktok.com/@naturosynth/photo/7288100434928225582?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    },
+    {
+        image: nmlTikTok,
+        link: "https://www.tiktok.com/@naturosynth/photo/7202752304741715243?is_from_webapp=1&sender_device=pc&web_id=7346340367413036575"
+    }
+]
+
+
 
 export const epkData = {
     bio: {
@@ -162,7 +234,13 @@ export const epkData = {
     },
 
     popularTracks: {
-        txt: popularTracksTxt
+        txt: danceDestinyTxt
+    },
+
+    tiktoks: tiktoks,
+
+    playlists: {
+        items: playlists
     },
 
     featuredOn: {
@@ -171,7 +249,7 @@ export const epkData = {
 
     videos: {
         musicVideos: musicVideos,
-        liveVideos: liveVideos
+        liveVideos: liveVideos,
     },
 
     pressPhotos: pressPhotos,
@@ -180,5 +258,5 @@ export const epkData = {
         tracks: tracks
     },
 
-    stats: stats
+    stats: stats,
 }
