@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css'
-import tikTokLogo from '../../data/tiktokLogo.png'
+import tikTokLogo from '../../data/Pictures/Icons/tiktokLogoBlack.png'
 
 const TikTokPopular = ({ tiktoks }) => (
     <div className="tikTokPopular">

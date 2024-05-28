@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css';
-import mapIcon from "../../data/mapIcon.png";
+import mapIcon from "../../data/Pictures/Icons/mapIcon.png";
 
 const LatestPerformance = ({latestPerformanceData}) => {
 
@@ -10,7 +10,7 @@ const LatestPerformance = ({latestPerformanceData}) => {
                 {latestPerformanceData.title.text}</a>
             </h1>
             <h4>
-                August 11th -
+                {latestPerformanceData.date} -
                 <a target="_blank" className="whiteLink" href={latestPerformanceData.location.link}>
                     <img className="locationIcon" src={mapIcon} alt={""}/>
                     {latestPerformanceData.location.text}

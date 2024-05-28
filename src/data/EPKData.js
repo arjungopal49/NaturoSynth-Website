@@ -1,35 +1,29 @@
 import React from "react";
-import annexPic1 from "./annex1-min.png";
-import annexPic2 from "./annex2-min.png";
-import annexPic3 from "./annex3-min.png";
-import annexPic4 from "./annex4-min.png";
-import annexPic5 from "./annex5-min.png";
-import profilePic1 from './profilepic1.jpg';
-import profilePic2 from './profilepic2.JPG';
-import profilePic3 from './profilepic3.JPEG';
-import livePic1 from './FullBandPlaying.png'
-import livePic2 from './Fullbandsick3.png'
-import livePic3 from './bigJunbass2.png';
-import livePic4 from './JunRedBacklight.png'
-import livePic5 from './PJfrontKieranBackGreen.png'
-import livePic6 from './KieranGuitar.png'
-import livePic1LowRes from './FullBandPlayingLowRes.png'
-import livePic2LowRes from './Fullbandsick3LowRes.png'
-import livePic3LowRes from './bigJunbassLowRes.png'
-import livePic4LowRes from './JunRedBacklightLowRes.png'
-import livePic5LowRes from './PJfrontKieranBackGreenLowRes.png'
-import livePic6LowRes from './KieranGuitarLowRes.png'
-import {tracks} from "./tracks";
+import profilePic1 from './Pictures/Profile/profilepic1.jpg';
+import profilePic2 from './Pictures/Profile/profilepic2.JPG';
+import profilePic3 from './Pictures/Profile/profilepic3.JPEG';
+import junePic2 from './Pictures/Profile/june23pic2.jpg'
+import junePic3 from './Pictures/Profile/june23pic3.JPG'
+import junePic4 from './Pictures/Profile/june23pic4.JPG'
+import annexPic1 from "./Pictures/Performances/AnnexAug11/annex1-min.jpg";
+import annexPic2 from "./Pictures/Performances/AnnexAug11/annex2-min.jpg";
+import annexPic3 from "./Pictures/Performances/AnnexAug11/annex3-min.jpg";
+import annexPic4 from "./Pictures/Performances/AnnexAug11/annex4-min.jpg";
+import annexPic5 from "./Pictures/Performances/AnnexAug11/annex5-min.jpg";
+import annexPic6 from "./Pictures/Performances/AnnexMar9/IMG_7075.jpg"
+import {tracks} from "./Songs/tracks";
 
-import forTikTok from './fearOfRegretTikTok.png'
-import hoTiktok1 from './headphonesOnTikTok.png'
-import hoTiktok2 from './headphonesOnTikTok2.png'
-import hoTiktok3 from './headphonesOnTikTok3.png'
-import imageTikTok1 from './imageTikTok.png'
-import imageTikTok2 from './imageTikTok2.png'
-import nmlTikTok from './nmlTikTok.png'
-import ttmTikTok from './ttmTikTok.png'
-import ttmTikTok2 from './ttmTikTok2.png'
+import forTikTok from './Pictures/TikTokScreenshots/fearOfRegretTikTok.png'
+import hoTiktok1 from './Pictures/TikTokScreenshots/headphonesOnTikTok.png'
+import hoTiktok2 from './Pictures/TikTokScreenshots/headphonesOnTikTok2.png'
+import hoTiktok3 from './Pictures/TikTokScreenshots/headphonesOnTikTok3.png'
+import imageTikTok1 from './Pictures/TikTokScreenshots/imageTikTok.png'
+import imageTikTok2 from './Pictures/TikTokScreenshots/imageTikTok2.png'
+import nmlTikTok from './Pictures/TikTokScreenshots/nmlTikTok.png'
+import ttmTikTok from './Pictures/TikTokScreenshots/ttmTikTok.png'
+import ttmTikTok2 from './Pictures/TikTokScreenshots/ttmTikTok2.png'
+import {AnnexAug11} from "./Pictures/Performances/AnnexAug11/AnnexAug11";
+import {AnnexMar9} from "./Pictures/Performances/AnnexMar9/AnnexMar9";
 
 
 
@@ -38,34 +32,6 @@ const bioTxt = "NaturoSynth is an innovative Indian-American band from the Chica
 const bioPicSrc = profilePic2;
 
 
-const latestShowTitle = {text: "Headlined @ The Annex", link: "https://www.eventbrite.com/e/naturosynth-moonglow-conor-keogh-jacob-slade-tickets-686837739167?aff=oddtdtcreator"};
-const latestShowDate = "August 11th";
-const latestShowLocation = {text: "Madison, WI", link: "https://www.theredzonemadison.com/the-annex/"};
-const latestShowPics = [annexPic1, annexPic2, annexPic3, annexPic4, annexPic5];
-const latestShowFeaturing = [
-    {
-        name: "Jacob Slade",
-        link: "https://www.instagram.com/jacob_slade_/",
-    },
-    {
-        name: "Conor",
-        link: "https://www.instagram.com/conor.keogh/",
-    },
-    {
-        name: "Moonglow",
-        link: "https://www.instagram.com/moonglow_the_band/",
-    }
-]
-const latestShowPress = [
-    {
-        name: "Isthumus",
-        link: "https://isthmus.com/events/naturosynth-moonglow-conor-keogh-jacob-slade/"
-    },
-    {
-        name: "Wisconsin State Journal",
-        link: "https://madison.com/events/naturosynth-jpg/image_acdff25a-c2b8-54be-95e4-7ab57519b78b.html"
-    }
-]
 
 const danceDestinyTxt = "Our latest track \"Dance Destiny\" is an electrifying summer anthem that seamlessly intertwines elements of electronic, disco and psych-pop. Inspired by the profound spiritual concept of reincarnation, the song narrates the timeless tale of two souls, destined to meet and dance across multiple lifetimes, bound by an eternal love. With its punchy bass hooks, bouncy drum grooves, infectious melodies, and ethereal synths, \"Dance Destiny\" invites listeners on a transcendental sonic journey. \"Headphones On\" and \"Fear of Regret\" are our two previous singles that have amassed over 300K streams on Spotify and over 1M views on TikTok. Our other popular tracks come from our 2022 EP, \"In Control\"."
 const popularTracksTxt = "Our popular tracks come from \"In Control\", our latest EP. \"In Control\" is a collection of 6 pop songs with elements of funk and psychedelia sprinkled all over it. From the driving 80’s inspired electronic drums, clean funk rhythm guitar and the swelling synthesizers of “Through the Motions”, to the smooth bass guitar riffs, groovy conga rhythms and ambient keys of “No More Love”, each song displays a new sound pallet and thematically, provides a new perspective on the emotional effects of a significant other. The EP dives into how someone may manipulate your mind either positively or negatively in ways you may or may not be able to control.";
@@ -95,6 +61,11 @@ const playlists = [
         description: "Playlist: South Asian Indie (>6K followers)",
         link: "https://open.spotify.com/playlist/33g9HtxlX4TuqbGAZMnzuF?si=d15982b7466346dd",
         song: "Fear of Regret",
+    },
+    {
+        description: "Playlist: Popüler İngilizce Şarkılar 2023",
+        link: "https://open.spotify.com/playlist/2je6dYaxDWb6IRiU6ZTMaG?si=d733919497714176",
+        song: "Headphones On",
     }
 ]
 const featuredOnItems = [
@@ -127,42 +98,10 @@ const liveVideos = ["https://youtu.be/W61Eqn-Vff8","https://youtu.be/xQBO1YOvdXw
 
 
 const pressPhotos = [
-    {
-        lowRes: livePic1LowRes,
-        highRes: livePic1
-    },
-    {
-        lowRes: profilePic3,
-        highRes: profilePic3
-    },
-    {
-        lowRes: livePic2LowRes,
-        highRes: livePic2
-    },
-    {
-        lowRes: livePic3LowRes,
-        highRes: livePic3
-    },
-    {
-        lowRes: livePic5LowRes,
-        highRes: livePic5
-    },
-    {
-        lowRes: livePic6LowRes,
-        highRes: livePic6
-    },
-    {
-        lowRes: profilePic1,
-        highRes: profilePic1
-    },
-    {
-        lowRes: livePic4LowRes,
-        highRes: livePic4
-    },
-    {
-        lowRes: profilePic2,
-        highRes: profilePic2
-    }
+    annexPic1, annexPic2, annexPic6,
+    annexPic4, annexPic5, annexPic3,
+    junePic2, junePic3, junePic4,
+    profilePic3, profilePic1, profilePic2,
 ]
 
 const stats = {
@@ -224,14 +163,7 @@ export const epkData = {
         src: bioPicSrc
     },
 
-    latestShow: {
-        title: latestShowTitle,
-        date: latestShowDate,
-        location: latestShowLocation,
-        pics: latestShowPics,
-        featuring: latestShowFeaturing,
-        press: latestShowPress
-    },
+    latestShow: AnnexMar9,
 
     popularTracks: {
         txt: danceDestinyTxt

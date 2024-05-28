@@ -1,5 +1,5 @@
 import React from "react";
-import head from '../../data/Headphones On Cover Art.png';
+import head from '../../data/Songs/Cover Arts/headphones-on-art.jpg';
 import './styles.css';
 
 const HeadphonesHeader = () => {

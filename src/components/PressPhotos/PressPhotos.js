@@ -27,8 +27,8 @@ const PressPhotos = ({pressPhotosData}) => {
             <p> (Click to Download)</p>
             <div className="epk-images">
                 {pressPhotosData.map((currentPhoto)=>
-                    <img onClick={() => handleClick(currentPhoto.highRes)}  className="pressImg"
-                         src={currentPhoto.lowRes} alt={""}/>
+                    <img onClick={() => handleClick(currentPhoto)}  className="pressImg"
+                         src={currentPhoto} alt={""}/>
                 )}
             </div>
         </div>

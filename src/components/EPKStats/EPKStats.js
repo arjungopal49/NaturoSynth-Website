@@ -1,8 +1,8 @@
 import React from "react";
 import './styles.css';
-import greenArrow from '../../data/greenarrow3.png';
-import spotify from '../../data/spotifytrans.png';
-import tiktok from  '../../data/tiktoktrans.png';
+import greenArrow from '../../data/Pictures/Icons/greenarrow3.png';
+import spotify from '../../data/Pictures/Icons/spotifytrans.png';
+import tiktok from '../../data/Pictures/Icons/tiktokLogoColor.png';
 
 const EPKStats = ({epkStatsData}) => {
     return (

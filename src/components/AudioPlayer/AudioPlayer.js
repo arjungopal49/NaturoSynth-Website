@@ -39,7 +39,9 @@ const AudioPlayer = ({tracks}) => {
             <div className="audio-player">
                 <div className="current-player">
                         <div className="audio-image">
-                            <img src={currentTrack.thumbnail} alt="audio avatar" />
+                            <a target="_blank" href={currentTrack.link}>
+                                <img src={currentTrack.thumbnail} alt="audio avatar" />
+                            </a>
                         </div>
                         <div className="right-side-of-coverart">
                             <DisplayTrack

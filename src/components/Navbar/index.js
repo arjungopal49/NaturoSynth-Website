@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Nav, NavLink, NavMenu, Bars, Image}
     from "./NavbarElements";
-import pic from "../../data/NSLogoWhite.png"
+import pic from "../../data/Pictures/Icons/NSLogoWhite.png"
 
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(false)

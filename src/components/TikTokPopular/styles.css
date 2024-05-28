@@ -40,3 +40,13 @@
     height: auto; /* Maintain aspect ratio */
     filter: invert(5);
 }
+
+@media screen and (max-width: 500px) {
+    .tiktokImg {
+        height: 12rem;
+        width: 8.8rem;
+        padding: 0.2rem;
+        cursor: pointer;
+        display: block;
+    }
+}

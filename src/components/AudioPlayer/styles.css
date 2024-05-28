@@ -32,6 +32,11 @@ body {
     font-size: 2rem;
     margin-bottom: 0;
     margin-top: 0;
+    text-decoration: none;
+}
+
+.title:hover {
+    color: #c2fdfd;
 }
 
 

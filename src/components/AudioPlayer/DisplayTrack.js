@@ -20,7 +20,7 @@ const DisplayTrack = ({
                 onLoadedMetadata={onLoadedMetadata}
                 onEnded={handleNext}
             />
-            <p className="title">{currentTrack.title}</p>
+            <a className="title" target="_blank" href={currentTrack.link}>{currentTrack.title}</a>
             <p className="audio-author-text">{currentTrack.author}</p>
         </div>
     );
