@@ -18,6 +18,10 @@ export const Nav = styled.nav`
   z-index: 12;
   //margin-left: calc(50% - 50vw);
   margin: 0 auto;
+  font-family: "Staatliches", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-style: normal;  
   @media screen and (max-width: 768px) {
     height: 6rem;
   }

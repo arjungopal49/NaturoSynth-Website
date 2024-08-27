@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Exo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Staatliches&display=swap');
+
+
 .epk-bio {
     scale: 80%;
     padding: 1.5rem;
@@ -14,6 +17,10 @@
     justify-content: center;
     max-width: 80rem;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 @media screen and (max-width: 500px) {
@@ -36,7 +43,10 @@
     font-size: 1.2rem;
     padding: 0 0 .5rem 1.1rem;
     color: white;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-style: normal;
     /*font-weight: bold;*/
 
     max-width: 50rem;

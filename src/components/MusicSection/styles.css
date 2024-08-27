@@ -1,0 +1,43 @@
+.music-section {
+    background-color: #000; /* Black background */
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .music-title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff !important; /* White text */
+    margin-bottom: 40px;
+  }
+  
+  .cover-arts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows the items to wrap to the next line */
+    gap: 20px;
+  }
+  
+  .cover-arts img {
+    width: 250px; /* Size of the cover art */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s; /* Adds a hover effect */
+  }
+  
+  .cover-arts img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .cover-arts img {
+      width: 120px; /* Reduce the size on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cover-arts img {
+      width: 100px; /* Further reduce the size on mobile */
+    }
+  }
+  

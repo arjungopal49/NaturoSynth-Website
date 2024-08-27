@@ -1,21 +1,38 @@
 .socialLogos-container {
-    justify-content: space-around;
-    text-align: center;
-    margin: auto;
-    display: inline-flex;
-    flex-wrap: wrap;
-    padding: 70px;
+    position: fixed; /* Makes the container stay in place while scrolling */
+    top: 70%; /* Centers the container vertically */
+    left:  0; /* Positions the container on the left side of the screen */
+    transform: translateY(-50%); /* Adjusts the container to be vertically centered */
+    display: flex;
+    flex-direction: column; /* Arranges the icons vertically */
+    align-items: center; /* Centers the icons horizontally */
+    padding: 1rem;
+    z-index: 1000; /* Ensures the container stays on top of other content */
+}
+
+.logoGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Adds some space between icons */
 }
 
 .logo {
     border: solid white;
     border-radius: 2rem;
     background-color: white;
+    opacity: 0.7; /* Makes the icons slightly translucent */
+    transition: opacity 0.3s; /* Smooth transition for opacity changes */
+}
+
+.logo:hover {
+    opacity: 1; /* Fully opaque when hovered */
 }
 
 @media screen and (max-width: 500px) {
     .socialLogos-container {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        left: auto;
+        right: 0; /* Moves the container to the right side on small screens */
+        padding: 1rem;
     }
 }

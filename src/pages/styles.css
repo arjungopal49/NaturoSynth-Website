@@ -1,13 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Exo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Staatliches&display=swap');
+
+
+body {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
+  }
+
+h1, h2, h3 {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
+}
+
 .epk-full {
     background-image: linear-gradient(to right, #bf64f8, #B17D92);
     justify-content: center;
     text-align: center;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .epk-full h1{
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .epk-popTracksAudioPlayerDiv {
@@ -17,6 +41,10 @@
     position:relative;
     max-width: 90rem;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .epk-playlistsPressDiv {
@@ -26,6 +54,10 @@
     position:relative;
     max-width: 90rem;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .epk-socialGrowthDiv {
@@ -35,6 +67,10 @@
     position:relative;
     max-width: 70rem;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .Home-full {
@@ -42,15 +78,27 @@
     justify-content: center;
     text-align: center;
     margin: auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 .home-full, .music-full, .videos-full, .shows-full, .merch-full, .contact-full {
     justify-content: center;
     text-align: center;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 
 }
 .home-full h1, .music-full h1, .videos-full h1, .shows-full h1, .merch-full h1, .contact-full h1{
     color: black;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-style: normal;
 }
 
 
