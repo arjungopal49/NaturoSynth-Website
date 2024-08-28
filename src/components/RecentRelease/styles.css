@@ -55,6 +55,8 @@ h1, h2, h3 {
     font-style: normal;
     font-style: normal;
     font-size: 40px;
+    border: 2px solid #fff;
+    display: inline-block;
 }
 
 .Img:hover {

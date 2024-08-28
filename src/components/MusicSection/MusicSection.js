@@ -11,7 +11,7 @@ const MusicSection = () => {
       const q = query(
         collection(db, 'releases'),
         orderBy('release_date', 'desc'), // Corrected field name
-        limit(5)
+        // limit(8)
       );
       const querySnapshot = await getDocs(q);
       const releasesData = querySnapshot.docs.map(doc => doc.data());

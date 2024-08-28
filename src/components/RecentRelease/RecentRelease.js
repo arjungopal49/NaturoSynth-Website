@@ -51,7 +51,7 @@ const RecentRelease = () => {
       {release ? (
       <div>
         {release.stream_link ? (
-        <a className='Button' href={release.stream_link}>Pre-Save Now</a>
+        <a className='Button' href={release.stream_link}>Listen Now</a>
         ) : (
             <p>No stream link available</p>
         )}

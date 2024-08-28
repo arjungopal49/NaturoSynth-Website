@@ -7,7 +7,7 @@ const PhotoScroll = () => {
   const [photos, setPhotos] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(1); // Start at the first real image
   const slideRef = useRef();
-  const transitionTime = 500; // Match this with your CSS transition
+  const transitionTime = 500;
 
   useEffect(() => {
     const fetchImages = async () => {
