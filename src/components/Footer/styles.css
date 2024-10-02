@@ -1,0 +1,14 @@
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 40px; /* Add some space before the footer */
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

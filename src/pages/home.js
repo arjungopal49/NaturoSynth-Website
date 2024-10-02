@@ -6,6 +6,7 @@ import PhotoScroll from "../components/PhotoScroll/PhotoScroll";
 import MusicSection from "../components/MusicSection/MusicSection";
 import TikTokFeed from "../components/TikTokFeed/TikTokFeed";
 import BackgroundSeparator from "../components/BackgroundSeparator/BackgroundSeparator";
+import Footer from "../components/Footer/Footer";
 import './styles.css'
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
             {/* <PhotoScroll /> */}
             <BackgroundSeparator imageUrl="https://firebasestorage.googleapis.com/v0/b/naturosynth-backend.appspot.com/o/Pictures%2FPerformances%2FSubTJun14%2FIMG_4520.png?alt=media&token=d276c9a9-de5b-49e0-9846-a526c225d78c"/>
         </div>
+            <Footer/>
         </div>
     );
 };

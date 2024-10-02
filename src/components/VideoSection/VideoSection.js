@@ -76,7 +76,7 @@ const VideoSection = () => {
       </div>
       {/* Upcoming Shows Section */}
       <div className="upcoming-shows">
-        <h2 className="show-headers">Upcoming Shows</h2>
+        <h2 className="show-headers">Upcoming</h2>
         {upcomingShows.length > 0 ? (
           upcomingShows.map((show, index) => (
             <div key={index} className="show">
@@ -97,7 +97,7 @@ const VideoSection = () => {
 
       {/* Previous Shows Section */}
       <div className="previous-shows">
-        <h2 className="show-headers">Previous Shows</h2>
+        <h2 className="show-headers">Previous</h2>
         {previousShows.length > 0 ? (
           previousShows.map((show, index) => (
             <div key={index} className="show">

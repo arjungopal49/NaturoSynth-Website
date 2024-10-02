@@ -71,7 +71,9 @@
   gap: 40px; /* Adds space between the flyers */
   margin-top: 20px;
   padding: 0 2%; /* Add padding to keep flyers away from screen edges */
+  font-size: 72px;
 }
+
 
 .show {
   text-align: center;
@@ -112,5 +114,5 @@
 }
 
 p {
-  font-size: 100px;
+  /* font-size: 100px; */
 }
