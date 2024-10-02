@@ -103,18 +103,77 @@ h1, h2, h3 {
 }
 
 
-.Background {
-    background-image: url('/src/data/Pictures/Performances/AnnexAug11/concert.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh; 
-    width: 100%; 
+
+
+/* Ensure each section and separator behaves properly */
+
+  
+/* Fixed background container */
+
+  
+/* General layout for content sections */
+.content-section {
+    width: 100%;
+    padding: 60px 20px; /* Adjusted padding for better fit */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+  
+  .content-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  .content-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    width: 100%;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Ensure content is readable on black background */
+    padding: 50px;
+  }
+  
+  .content-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .content-section p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .content-section img, .content-section video {
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+  }
+  .Background {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/naturosynth-backend.appspot.com/o/Pictures%2FPerformances%2FAnnexMar9%2FIMG_7288.jpg?alt=media&token=83300574-25c8-46ac-9695-2422e24bd356);
+    background-size: cover; /* Ensure the background covers the entire area */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Make the background static while scrolling */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: white; /* Ensure text is white by default */
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    padding: 0;
+    margin: 0;
 }
-
-
-
-
-
-

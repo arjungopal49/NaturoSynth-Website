@@ -1,0 +1,18 @@
+.background-separator-container {
+  width: 100%;
+}
+
+.background-separator {
+  height: 100vh; /* Adjust the height as needed */
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.white-bar {
+  width: 100%;
+  height: 25px; /* Adjust the height of the bar */
+  background-color: white; /* Make the bar white */
+}
