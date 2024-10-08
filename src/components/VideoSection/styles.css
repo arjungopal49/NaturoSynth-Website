@@ -43,7 +43,8 @@
 }
 
 .logo-image {
-  width: 500px;
+  max-width: 80%; /* Ensure it scales within the container */
+  width: 500px; /* Default width */
   height: auto;
 }
 
