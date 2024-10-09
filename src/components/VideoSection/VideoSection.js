@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './styles.css';
 import { db } from '../../firebase';
-import { collection, query, orderBy, getDocs } from 'firebase/firestore/lite';
+import { collection, query, orderBy, getDocs, Timestamp } from 'firebase/firestore/lite';
 
 const VideoSection = () => {
   const videoRef = useRef(null);
@@ -38,7 +38,7 @@ const VideoSection = () => {
 
       querySnapshot.docs.forEach(doc => {
         const show = doc.data();
-        const showDate = new Date(show.date); // Assuming date is stored in a format parsable by Date()
+        const showDate = show.date instanceof Timestamp ? show.date.toDate() : new Date(show.date); // Convert Firestore Timestamp to JS Date
 
         if (showDate >= now) {
           upcoming.push(show);
@@ -77,22 +77,20 @@ const VideoSection = () => {
       {/* Upcoming Shows Section */}
       <div className="upcoming-shows">
         <h2 className="show-headers">Upcoming</h2>
-        {upcomingShows.length > 0 ? (
-          upcomingShows.map((show, index) => (
-            <div key={index} className="show">
-              <img src={show.flyerUrl} alt="Show Flyer" className="flyer-img" />
-              {show.ticketLink ? (
-                <a href={show.ticketLink} className="ticket-button">
-                  Get Tickets
-                </a>
-              ) : (
-                <p className="ticket-free">Free!</p>
-              )}
-            </div>
-          ))
-        ) : (
-          <p>Stay tuned...</p>
-        )}
+        {upcomingShows.map((show, index) => (
+          <div key={index} className="show">
+            <img src={show.flyerUrl} alt="Show Flyer" className="flyer-img" />
+            {show.ticketLink ? (
+              <a href={show.ticketLink} className="ticket-button">
+                Get Tickets
+              </a>
+            ) : show.ticketPrice ? (
+              <p className="ticket-free">{show.ticketPrice}</p>
+            ) : (
+              <p className="ticket-free">Free!</p>
+            )}
+          </div>
+        ))}
       </div>
 
       {/* Previous Shows Section */}
