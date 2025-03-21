@@ -22,7 +22,7 @@ const TrackList = ({
                              key={index}
                              onClick={() => handleSeek(index)}>
                             <p className="songsListNumber">{index+1 + ""}</p>
-                            <img src={value.thumbnail} alt="audio avatar" />
+                            <img src={value ? require("../../data/Songs" + value.coverArt) : ""} alt="audio avatar" />
                             <p className="">{value.title}</p>
 
                         </div>

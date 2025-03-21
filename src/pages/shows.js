@@ -1,4 +1,5 @@
 import React from "react";
+import ShowsList from "../components/ShowsList/ShowsList";
 
 const Shows = () => {
     return (
@@ -6,6 +7,7 @@ const Shows = () => {
             <h1>
                 Catch us live this summer in the Midwest!
             </h1>
+            <ShowsList/>
         </div>
     );
 };

@@ -13,19 +13,21 @@ import LatestPerformance from "../components/LatestPerformance/LatestPerformance
 import {epkData} from "../data/EPKData";
 import TikTokPopular from "../components/TikTokPopular/TikTokPopular";
 import EPKPlaylists from "../components/EPKPlaylists/EPKPlaylists";
+import ShowsList from "../components/ShowsList/ShowsList";
 
 const EPK = () => {
     return (
         <div className="epk-full">
             <Biography epkBioData={epkData.bio}/>
+            <SocialLogos floating={true} />
             <div className="epk-socialGrowthDiv">
-                <SocialLogos/>
+                <ShowsList />
                 <EPKStats epkStatsData={epkData.stats}/>
             </div>
-            <LatestPerformance latestPerformanceData={epkData.latestShow}/>
+            <LatestPerformance />
             <div className="epk-popTracksAudioPlayerDiv">
                 <PopularSongs popularTracksData={epkData.popularTracks}/>
-                <AudioPlayer tracks={epkData.audioPlayer.tracks}/>
+                <AudioPlayer/>
             </div>
             <TikTokPopular tiktoks={epkData.tiktoks}/>
             <div className="epk-playlistsPressDiv">

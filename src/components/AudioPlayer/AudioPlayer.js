@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 // import components
 import DisplayTrack from './DisplayTrack';
@@ -8,11 +8,17 @@ import TrackList from './TrackList';
 // import TopBar from './TopBar';
 import './styles.css';
 import React from 'react';
-const AudioPlayer = ({tracks}) => {
+import art from '../../data/Songs/CoverArts/dance_destiny.jpg'
+
+import { db } from '../../firebase';
+import { collection, getDocs} from 'firebase/firestore/lite';
+
+const AudioPlayer = () => {
     // states
+    const [tracks, setTracks] = useState([]);
     const [trackIndex, setTrackIndex] = useState(0);
     const [currentTrack, setCurrentTrack] = useState(
-        tracks[trackIndex]
+        null
     );
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
@@ -20,6 +26,34 @@ const AudioPlayer = ({tracks}) => {
     // reference
     const audioRef = useRef();
     const progressBarRef = useRef();
+
+    useEffect(() => {
+        if (tracks.length > 0) {
+            setCurrentTrack(tracks[trackIndex])
+            console.log(currentTrack)
+        }
+    }, [tracks]);
+    
+    useEffect(() => {
+        fetchSongs();
+    }, []);
+    
+    const fetchSongs = async () => {
+        try {
+          const querySnapshot = await getDocs(collection(db, "songs"));
+          const songsList = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          const topSongs = songsList
+            .filter(song => song.rank >= 1 && song.rank <= 10)
+            .sort((a, b) => a.rank - b.rank);
+
+          setTracks(topSongs);
+        } catch (error) {
+          console.error("Error fetching songs:", error);
+        }
+    };
 
     const handleNext = () => {
         if (trackIndex >= tracks.length - 1) {
@@ -39,8 +73,8 @@ const AudioPlayer = ({tracks}) => {
             <div className="audio-player">
                 <div className="current-player">
                         <div className="audio-image">
-                            <a target="_blank" href={currentTrack.link}>
-                                <img src={currentTrack.thumbnail} alt="audio avatar" />
+                            <a target="_blank" href={currentTrack ? currentTrack.link : ""}>
+                                <img src={currentTrack ? require("../../data/Songs" + currentTrack.coverArt) : ""} alt="audio avatar" />
                             </a>
                         </div>
                         <div className="right-side-of-coverart">

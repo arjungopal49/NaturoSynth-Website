@@ -5,13 +5,12 @@ import profilePic3 from './Pictures/Profile/profilepic3.JPEG';
 import junePic2 from './Pictures/Profile/june23pic2.jpg'
 import junePic3 from './Pictures/Profile/june23pic3.JPG'
 import junePic4 from './Pictures/Profile/june23pic4.JPG'
-import annexPic1 from "./Pictures/Performances/AnnexAug11/annex1-min.jpg";
-import annexPic2 from "./Pictures/Performances/AnnexAug11/annex2-min.jpg";
-import annexPic3 from "./Pictures/Performances/AnnexAug11/annex3-min.jpg";
-import annexPic4 from "./Pictures/Performances/AnnexAug11/annex4-min.jpg";
-import annexPic5 from "./Pictures/Performances/AnnexAug11/annex5-min.jpg";
-import annexPic6 from "./Pictures/Performances/AnnexMar9/IMG_7075.jpg"
-import {tracks} from "./Songs/tracks";
+import annexPic1 from "./Pictures/Performances/2023_08_11_Annex/annex1-min.jpg";
+import annexPic2 from "./Pictures/Performances/2023_08_11_Annex/annex2-min.jpg";
+import annexPic3 from "./Pictures/Performances/2023_08_11_Annex/annex3-min.jpg";
+import annexPic4 from "./Pictures/Performances/2023_08_11_Annex/annex4-min.jpg";
+import annexPic5 from "./Pictures/Performances/2023_08_11_Annex/annex5-min.jpg";
+import annexPic6 from "./Pictures/Performances/2024_03_09_Annex/IMG_7075.jpg"
 
 import forTikTok from './Pictures/TikTokScreenshots/fearOfRegretTikTok.png'
 import hoTiktok1 from './Pictures/TikTokScreenshots/headphonesOnTikTok.png'
@@ -22,13 +21,8 @@ import imageTikTok2 from './Pictures/TikTokScreenshots/imageTikTok2.png'
 import nmlTikTok from './Pictures/TikTokScreenshots/nmlTikTok.png'
 import ttmTikTok from './Pictures/TikTokScreenshots/ttmTikTok.png'
 import ttmTikTok2 from './Pictures/TikTokScreenshots/ttmTikTok2.png'
-import {AnnexAug11} from "./Pictures/Performances/AnnexAug11/AnnexAug11";
-import {AnnexMar9} from "./Pictures/Performances/AnnexMar9/AnnexMar9";
 
-
-
-
-const bioTxt = "NaturoSynth is an innovative Indian-American band from the Chicagoland area that has been creating a distinct fusion of alternative, indie, psychedelic, funk, and dance music since 2019. The band members consist of Arjun Gopal, Kieran Gopal, Pranav Joshi, and Arjun Shamaraya. Their intricate soundscape blends acoustic instrumentation with electronic sound design, creating futuristic yet organic compositions. With melodic guitar leads, driving bass lines, ethereal vocals, and a variety of synthesizers, their palette of sounds pushes the limits of musical expression and transcends traditional genres. They take the listener on a new sonic journey, reflecting their evolving musical vision. They are constantly experimenting to create something exciting and meaningful for the audience and are always striving to exceed the boundaries of what’s possible for them. Their music is a reflection of who they are and the world around them.";
+const bioTxt = "NaturoSynth, is a young Indian-American group from the Chicagoland area that has been creating funky, psychedelic, alternative-pop music since 2019. Writers, multi-instrumentalists, and producers Arjun Gopal and Kieran Gopal, strive to transcend genres and push boundaries by creating futuristic yet organic tracks that incorporate fresh instrumentation with their distinct psychedelic touch. NaturoSynth is headlining shows in the Midwestern music scene alongside keyboardist Pranav Joshi, bassist Arjun Shamaraya, and drummer Michael Plumridge."
 const bioPicSrc = profilePic2;
 
 
@@ -69,6 +63,16 @@ const playlists = [
     }
 ]
 const featuredOnItems = [
+    {
+        icon: "sharethis",
+        description: "Article: Earmilk New Music",
+        link: "https://earmilk.com/2024/09/09/naturosynth-delivers-immersive-and-emotive-ep-does-this-last/"
+    },
+    {
+        icon: "sharethis",
+        description: "Article: Tastemakers Magazine Q&A ",
+        link: "https://www.tastemakersmag.com/interviews/naturosynth-interview-cgssh"
+    },
     {
         icon: "sharethis",
         description: "Article: Wisconsin State Journal Interview",
@@ -163,8 +167,6 @@ export const epkData = {
         src: bioPicSrc
     },
 
-    latestShow: AnnexMar9,
-
     popularTracks: {
         txt: danceDestinyTxt
     },
@@ -185,10 +187,6 @@ export const epkData = {
     },
 
     pressPhotos: pressPhotos,
-
-    audioPlayer: {
-        tracks: tracks
-    },
 
     stats: stats,
 }

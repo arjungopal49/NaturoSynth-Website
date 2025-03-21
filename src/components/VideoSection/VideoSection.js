@@ -79,7 +79,11 @@ const VideoSection = () => {
         <h2 className="show-headers">Upcoming</h2>
         {upcomingShows.map((show, index) => (
           <div key={index} className="show">
-            <img src={show.flyerUrl} alt="Show Flyer" className="flyer-img" />
+            <img
+                src={show.flyer ? require(`../../data/Pictures${show.flyer}`) : ""}
+                alt={show.flyer ? "Show Flyer" : "Show Flyer Not Available"}
+                className="flyer-img"
+              />
             {show.ticketLink ? (
               <a href={show.ticketLink} className="ticket-button">
                 Get Tickets
@@ -99,7 +103,12 @@ const VideoSection = () => {
         {previousShows.length > 0 ? (
           previousShows.map((show, index) => (
             <div key={index} className="show">
-              <img src={show.flyerUrl} alt="Show Flyer" className="flyer-img" />
+              <img
+                src={show.flyer ? require(`../../data/Pictures${show.flyer}`) : ""}
+                alt={show.flyer ? "Show Flyer" : "Show Flyer Not Available"}
+                className="flyer-img"
+              />
+
               {/* No ticket link for previous shows */}
             </div>
           ))

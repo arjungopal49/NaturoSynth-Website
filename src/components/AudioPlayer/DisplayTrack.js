@@ -1,4 +1,3 @@
-
 const DisplayTrack = ({
                           currentTrack,
                           audioRef,
@@ -15,13 +14,13 @@ const DisplayTrack = ({
     return (
         <div>
             <audio
-                src={currentTrack.src}
+                src={currentTrack ? require("../../data/Songs" + currentTrack.audio) : ""}
                 ref={audioRef}
                 onLoadedMetadata={onLoadedMetadata}
                 onEnded={handleNext}
             />
-            <a className="title" target="_blank" href={currentTrack.link}>{currentTrack.title}</a>
-            <p className="audio-author-text">{currentTrack.author}</p>
+            <a className="title" target="_blank" href={currentTrack ? currentTrack.link : ""}>{currentTrack ? currentTrack.title : ""}</a>
+            <p className="audio-author-text">{currentTrack ? currentTrack.author : ""}</p>
         </div>
     );
 };

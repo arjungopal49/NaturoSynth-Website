@@ -20,7 +20,7 @@ h1, h2, h3 {
     justify-content: center;
     text-align: center;
     margin: auto;
-    font-family: "Staatliches", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-style: normal;
@@ -28,7 +28,7 @@ h1, h2, h3 {
 
 .epk-full h1{
     text-align: center;
-    font-family: "Staatliches", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-style: normal;
@@ -41,7 +41,7 @@ h1, h2, h3 {
     position:relative;
     max-width: 90rem;
     margin: auto;
-    font-family: "Staatliches", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-style: normal;
@@ -54,7 +54,7 @@ h1, h2, h3 {
     position:relative;
     max-width: 90rem;
     margin: auto;
-    font-family: "Staatliches", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-style: normal;
@@ -67,7 +67,7 @@ h1, h2, h3 {
     position:relative;
     max-width: 70rem;
     margin: auto;
-    font-family: "Staatliches", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-style: normal;
@@ -104,6 +104,13 @@ h1, h2, h3 {
 }
 
 
+.shows-full {
+  background-image: linear-gradient(to right, #6489f8, #7db1a8);
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", sans-serif;
+}
 
 
 /* Ensure each section and separator behaves properly */
