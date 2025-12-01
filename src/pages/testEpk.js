@@ -98,11 +98,10 @@ function EPKPageContent({
         py: { xs: 3, md: 5 },
       }}
     >
-      <SocialLogos floating={true} />
       {/* BIO / PIC */}
       <Section title="Biography">
         <Grid container spacing={4}>
-          <Grid item size={3}>
+          <Grid item size={{ xs: 12, md: 3 }}>
             <Box
               component="img"
               src={newBioPic}
@@ -111,16 +110,19 @@ function EPKPageContent({
                 width: '100%',
                 borderRadius: 1,
                 display: 'block',
-                mx: 'auto',
+                mx: 'auto',   
               }}
             />
           </Grid>
-          <Grid item size={6}>
+          <Grid item size={{ xs: 12, md: 5 }}>
             <Typography
               variant="body1"
             >
               {bio}
             </Typography>
+          </Grid>
+          <Grid item size={{ xs: 12, md: 4 }}>
+            <SocialLogos floating={true} />
           </Grid>
         </Grid>
       </Section>
@@ -133,7 +135,7 @@ function EPKPageContent({
           alignItems="flex-start"
         >
           {/* Shows list */}
-          <Grid item size={6}>
+          <Grid item size={{ xs: 12, md: 6 }}>
             <Paper
               elevation={1}
               sx={{ p: 2, borderRadius: 2 }}
@@ -179,7 +181,7 @@ function EPKPageContent({
           </Grid>
 
           {/* Selected show images */}
-          <Grid item size={6}>
+          <Grid item size={{ xs: 12, md: 6 }}>
             <Paper
               elevation={1}
               sx={{
@@ -235,7 +237,7 @@ function EPKPageContent({
       {/* TIKTOK */}
       <Section title="TikTok Highlights">
         <Grid container spacing={1}>
-          <Grid item size={3}>
+          <Grid item size={{ xs: 12, md: 3 }}>
             <Box component="ul" sx={{ pl: 3, m: 0 }}>
               {tiktokInfo.map((stat, index) => (
                 <Typography
@@ -249,7 +251,7 @@ function EPKPageContent({
               ))}
             </Box>
           </Grid>
-          <Grid item size={9}>
+          <Grid item size={{ xs: 12, md: 9 }}>
             <Stack
               direction="row"
               spacing={1}
@@ -270,7 +272,7 @@ function EPKPageContent({
       </Section>
 
       <Grid container spacing={2}>
-        <Grid item size={6}> 
+        <Grid item size={{ xs: 12, md: 6 }}> 
           {/* STREAMING */}
           <Section title="Spotify / Streaming">
             <Box component="ul" sx={{ pl: 3, m: 0 }}>
@@ -287,7 +289,7 @@ function EPKPageContent({
             </Box>
           </Section>
         </Grid>
-        <Grid item size={6}> 
+        <Grid item size={{ xs: 12, md: 6 }}> 
           {/* PRESS */}
           <Section title="Press, Radio, & Sync">
             <Box component="ul" sx={{ pl: 3, m: 0 }}>
