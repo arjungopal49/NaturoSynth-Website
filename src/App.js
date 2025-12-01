@@ -10,6 +10,7 @@ import Shows from './pages/shows';
 import Merch from './pages/merch';
 import EPK from './pages/epk';
 import Contact from './pages/contact';
+import TestEPKPage from './pages/testEpk';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Route path='/videos' element={<Videos/>} />
               <Route path='/shows' element={<Shows/>} />
               <Route path='/merch' element={<Merch/>} />
-              <Route path='/epk' element={<EPK/>} />
+              <Route path='/epk' element={<TestEPKPage/>} />
               <Route path='/contact' element={<Contact/>} />
             </Routes>
           </Router>
