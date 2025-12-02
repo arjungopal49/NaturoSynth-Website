@@ -72,7 +72,7 @@ export const EPKProvider = ({ children }) => {
         const querySnapshot = await getDocs(q);
         const data = querySnapshot.docs.map((d) => d.data());
         setShows(data);
-        if (data.length > 0) setSelectedShow(data[1]);
+        if (data.length > 0) setSelectedShow(data[0]);
       } catch (e) {
         console.error('fetchShows error', e);
       }
