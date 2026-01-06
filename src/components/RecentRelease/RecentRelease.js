@@ -5,6 +5,7 @@ import { db } from '../../firebase'; // Correct import path for db
 
 const RecentRelease = () => {
   const [release, setRelease] = useState(null);
+  const [isFutureRelease, setIsFutureRelease] = useState(false);
 
   useEffect(() => {
     const getRecentRelease = async () => {
@@ -24,6 +25,17 @@ const RecentRelease = () => {
           const latestRelease = querySnapshot.docs.map(doc => doc.data())[0];
           console.log('Fetched release:', latestRelease);
           setRelease(latestRelease);
+
+          // Check if release date is in the future
+          const releaseDate = latestRelease.release_date?.toDate 
+            ? latestRelease.release_date.toDate() 
+            : new Date(latestRelease.release_date);
+          
+          const now = new Date();
+          const isFuture = releaseDate > now;
+          
+          setIsFutureRelease(isFuture);
+          console.log('Release date:', releaseDate, 'Is future release:', isFuture);
         }
       } catch (error) {
         console.error('Error fetching release: ', error);
@@ -51,7 +63,9 @@ const RecentRelease = () => {
       {release ? (
       <div>
         {release.stream_link ? (
-        <a className='Button' href={release.stream_link}>Listen Now</a>
+        <a className='Button' href={release.stream_link}>
+          {isFutureRelease ? 'Pre-Save Now' : 'Listen Now'}
+        </a>
         ) : (
             <p>No stream link available</p>
         )}
