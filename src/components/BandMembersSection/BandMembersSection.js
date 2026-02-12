@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
 import './styles.css';
@@ -38,39 +38,8 @@ const BandMembersSection = () => {
     return 400 + 48; // desktop: card + gap
   };
   
-  // Initialize scroll position to middle set
-  useEffect(() => {
-    if (scrollContainerRef.current && bandMembers.length > 0) {
-      const container = scrollContainerRef.current;
-      const cardWidth = getCardWidth();
-      
-      // Calculate left padding
-      let paddingLeft;
-      if (window.innerWidth <= 480) {
-        paddingLeft = (container.offsetWidth / 2) - (240 / 2);
-      } else if (window.innerWidth <= 768) {
-        paddingLeft = (container.offsetWidth / 2) - (300 / 2);
-      } else {
-        paddingLeft = (container.offsetWidth / 2) - (400 / 2);
-      }
-      
-      // Position so first card of middle set (index 5) is centered
-      // We need: paddingLeft + (index * cardWidth) to be at the center
-      // scrollLeft + (containerWidth / 2) = paddingLeft + (5 * cardWidth)
-      // scrollLeft = paddingLeft + (5 * cardWidth) - (containerWidth / 2)
-      const targetCardPosition = paddingLeft + (5 * cardWidth);
-      const scrollPosition = targetCardPosition - (container.offsetWidth / 2);
-      
-      scrollContainerRef.current.scrollLeft = scrollPosition;
-      
-      // Wait for scroll to settle then update
-      setTimeout(() => updateCenteredCard(), 100);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bandMembers]);
-  
   // Update which card is centered
-  const updateCenteredCard = () => {
+  const updateCenteredCard = useCallback(() => {
     if (!scrollContainerRef.current) return;
     
     const container = scrollContainerRef.current;
@@ -96,7 +65,47 @@ const BandMembersSection = () => {
     const index = Math.round(positionInStrip / cardWidth);
     
     setCenteredIndex(index);
-  };
+  }, []);
+  
+  // Initialize scroll position to middle set
+  useEffect(() => {
+    if (scrollContainerRef.current && bandMembers.length > 0) {
+      const initializeScroll = () => {
+        const container = scrollContainerRef.current;
+        if (!container) return;
+        
+        const cardWidth = getCardWidth();
+        
+        // Calculate left padding
+        let paddingLeft;
+        if (window.innerWidth <= 480) {
+          paddingLeft = (container.offsetWidth / 2) - (240 / 2);
+        } else if (window.innerWidth <= 768) {
+          paddingLeft = (container.offsetWidth / 2) - (300 / 2);
+        } else {
+          paddingLeft = (container.offsetWidth / 2) - (400 / 2);
+        }
+        
+        // Position so first card of middle set (index 5) is centered
+        // We need: paddingLeft + (index * cardWidth) to be at the center
+        // scrollLeft + (containerWidth / 2) = paddingLeft + (5 * cardWidth)
+        // scrollLeft = paddingLeft + (5 * cardWidth) - (containerWidth / 2)
+        const targetCardPosition = paddingLeft + (5 * cardWidth);
+        const scrollPosition = targetCardPosition - (container.offsetWidth / 2);
+        
+        container.scrollLeft = scrollPosition;
+        
+        // Force update centered card immediately
+        updateCenteredCard();
+      };
+      
+      // Initialize immediately and after a delay to ensure layout is settled
+      initializeScroll();
+      const timer = setTimeout(initializeScroll, 150);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [bandMembers, updateCenteredCard]);
   
   // Handle infinite scroll and center detection
   const handleScroll = () => {
