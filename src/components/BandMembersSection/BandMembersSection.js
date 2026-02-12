@@ -43,28 +43,29 @@ const BandMembersSection = () => {
     if (!scrollContainerRef.current) return;
     
     const container = scrollContainerRef.current;
-    const scrollLeft = container.scrollLeft;
-    const cardWidth = getCardWidth();
+    const cards = container.querySelectorAll('.member-card');
+    if (cards.length === 0) return;
     
-    // Calculate the center of the viewport
-    const viewportCenter = scrollLeft + (container.offsetWidth / 2);
+    // Get the center point of the viewport
+    const containerRect = container.getBoundingClientRect();
+    const containerCenter = containerRect.left + containerRect.width / 2;
     
-    // Calculate padding offset based on screen size
-    let paddingLeft;
-    if (window.innerWidth <= 480) {
-      paddingLeft = (container.offsetWidth / 2) - (240 / 2);
-    } else if (window.innerWidth <= 768) {
-      paddingLeft = (container.offsetWidth / 2) - (300 / 2);
-    } else {
-      paddingLeft = (container.offsetWidth / 2) - (400 / 2);
-    }
+    // Find the card closest to center
+    let closestIndex = 0;
+    let closestDistance = Infinity;
     
-    // Find which card is centered
-    // We need to account for the left padding and calculate position within the card strip
-    const positionInStrip = viewportCenter - paddingLeft;
-    const index = Math.round(positionInStrip / cardWidth);
+    cards.forEach((card, index) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const distance = Math.abs(cardCenter - containerCenter);
+      
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
     
-    setCenteredIndex(index);
+    setCenteredIndex(closestIndex);
   }, []);
   
   // Initialize scroll position to middle set
