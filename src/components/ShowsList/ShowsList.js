@@ -14,9 +14,9 @@ const ShowsList = () => {
     };
 // eslint-disable-next-line no-unused-vars
 
-    const closeModal = () => {
-        setSelectedShow(null);
-    };
+    // const closeModal = () => {
+    //     setSelectedShow(null);
+    // };
 
     useEffect(() => {
         fetchShows();
