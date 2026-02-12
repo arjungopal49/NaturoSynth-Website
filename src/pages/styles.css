@@ -1,36 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Exo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Staatliches&display=swap');
 
-
+/* Global styles */
 body {
     font-family: "Staatliches", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-style: normal;
-  }
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 h1, h2, h3 {
     font-family: "Staatliches", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-style: normal;
 }
 
+/* New home redesign container */
+.home-redesign {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Social Links Section */
+.social-links-section {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 2px solid #bf64f8;
+}
+
+.social-section-title {
+    font-family: "Staatliches", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #ffffff;
+    margin: 0 0 3rem 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(191, 100, 248, 0.6);
+}
+
+/* Old EPK styles (kept for backward compatibility) */
 .epk-full {
     background-image: linear-gradient(to right, #bf64f8, #B17D92);
     justify-content: center;
     text-align: center;
     margin: auto;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Staatliches", sans-serif;
     font-weight: 600;
-    font-style: normal;
     font-style: normal;
 }
 
 .epk-full h1{
     text-align: center;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Staatliches", sans-serif;
     font-weight: 600;
-    font-style: normal;
     font-style: normal;
 }
 
@@ -41,9 +67,8 @@ h1, h2, h3 {
     position:relative;
     max-width: 90rem;
     margin: auto;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Staatliches", sans-serif;
     font-weight: 600;
-    font-style: normal;
     font-style: normal;
 }
 
@@ -54,9 +79,8 @@ h1, h2, h3 {
     position:relative;
     max-width: 90rem;
     margin: auto;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Staatliches", sans-serif;
     font-weight: 600;
-    font-style: normal;
     font-style: normal;
 }
 
@@ -67,121 +91,68 @@ h1, h2, h3 {
     position:relative;
     max-width: 70rem;
     margin: auto;
-    font-family: "Trebuchet MS", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-style: normal;
-}
-
-.Home-full {
-    background-image: "bigJunbass2.png";
-    justify-content: center;
-    text-align: center;
-    margin: auto;
     font-family: "Staatliches", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-style: normal;
-    background-color: #000 !important;
 }
 
-.home-full, .music-full, .videos-full, .shows-full, .merch-full, .contact-full {
+/* Old page styles (for other pages) */
+.music-full, .videos-full, .shows-full, .merch-full, .contact-full {
     justify-content: center;
     text-align: center;
     font-family: "Staatliches", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-style: normal;
-    /* padding-bottom: 50px; */
-
 }
-.home-full h1, .music-full h1, .videos-full h1, .shows-full h1, .merch-full h1, .contact-full h1{
+
+.music-full h1, .videos-full h1, .shows-full h1, .merch-full h1, .contact-full h1 {
     color: black;
     font-family: "Staatliches", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-style: normal;
 }
-
 
 .shows-full {
-  background-image: linear-gradient(to right, #6489f8, #7db1a8);
-  min-height: 100vh;
-  padding: 1rem;
-  box-sizing: border-box;
-  font-family: "Trebuchet MS", sans-serif;
+    background-image: linear-gradient(to right, #6489f8, #7db1a8);
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-family: "Staatliches", sans-serif;
 }
 
-
-/* Ensure each section and separator behaves properly */
-
-  
-/* Fixed background container */
-
-  
-/* General layout for content sections */
-.content-section {
-    width: 100%;
-    padding: 60px 20px; /* Adjusted padding for better fit */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    text-align: center;
-  }
-  
-  .content-section h1 {
-    font-size: 48px;
-    font-weight: bold;
-  }
-  
-  .content-section p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .content-section {
-    width: 100%;
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Ensure content is readable on black background */
-    padding: 50px;
-  }
-  
-  .content-section h1 {
-    font-size: 48px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  .content-section p {
-    color: #ccc;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
-  .content-section img, .content-section video {
-    max-width: 100%;
-    height: auto;
-    margin: 30px 0;
-  }
-  .Background {
+/* Old background styles (kept for other pages that might use it) */
+.Background {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/naturosynth-backend.appspot.com/o/Pictures%2FPerformances%2FAnnexMar9%2FIMG_7288.jpg?alt=media&token=83300574-25c8-46ac-9695-2422e24bd356);
-    background-size: cover; /* Ensure the background covers the entire area */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Make the background static while scrolling */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-    color: rgb(0, 0, 0); /* Ensure text is white by default */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
     width: 100%;
-    min-height: 100vh; /* Ensure it covers the full viewport height */
+    min-height: 100vh;
     padding: 0;
     margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-links-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .social-section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links-section {
+        padding: 3rem 1rem;
+    }
+
+    .social-section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
 }

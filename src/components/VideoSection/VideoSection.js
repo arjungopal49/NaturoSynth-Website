@@ -1,120 +1,191 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './styles.css';
 import { db } from '../../firebase';
-import { collection, query, orderBy, getDocs, Timestamp } from 'firebase/firestore/lite';
+import { collection, query, orderBy, getDocs, doc, getDoc, Timestamp } from 'firebase/firestore/lite';
 
 const VideoSection = () => {
   const videoRef = useRef(null);
   const [upcomingShows, setUpcomingShows] = useState([]);
-  const [previousShows, setPreviousShows] = useState([]);
   const [showLogo, setShowLogo] = useState(true);
+  const [recapVideo, setRecapVideo] = useState(null);
+  const [showControls, setShowControls] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleVideoClick = () => {
+  const handleVideoClick = (e) => {
+    if (e) e.stopPropagation();
     if (videoRef.current.paused) {
       videoRef.current.play();
       setShowLogo(false);
+      setIsPlaying(true);
     } else {
       videoRef.current.pause();
-      setShowLogo(true);
+      setIsPlaying(false);
+    }
+  };
+
+  const handleWrapperClick = () => {
+    if (showLogo) {
+      videoRef.current.play();
+      setShowLogo(false);
+      setIsPlaying(true);
     }
   };
 
   const handleVideoEnd = () => {
-    videoRef.current.currentTime = 0; // Reset video to the start
+    videoRef.current.currentTime = 0;
     setShowLogo(true);
+    setIsPlaying(false);
   };
 
   useEffect(() => {
-    const fetchShows = async () => {
-      const q = query(
-        collection(db, 'shows'),
-        orderBy('date', 'desc') // Fetch shows ordered by date
-      );
-      const querySnapshot = await getDocs(q);
-      const now = new Date(); // Current date/time
-
-      const upcoming = [];
-      const previous = [];
-
-      querySnapshot.docs.forEach(doc => {
-        const show = doc.data();
-        const showDate = show.date instanceof Timestamp ? show.date.toDate() : new Date(show.date); // Convert Firestore Timestamp to JS Date
-
-        if (showDate >= now) {
-          upcoming.push(show);
-        } else {
-          previous.push(show);
+    const fetchRecapVideo = async () => {
+      try {
+        const mediaDocRef = doc(db, 'live music', 'media');
+        const docSnapshot = await getDoc(mediaDocRef);
+        
+        if (docSnapshot.exists()) {
+          const data = docSnapshot.data();
+          const recap = data?.recap;
+          if (recap) {
+            setRecapVideo(recap);
+          }
         }
-      });
-
-      setUpcomingShows(upcoming);
-      setPreviousShows(previous);
+      } catch (error) {
+        console.error('Error fetching recap video:', error);
+      }
     };
 
+    const fetchShows = async () => {
+      try {
+        const q = query(collection(db, 'live music'), orderBy('date', 'asc'));
+        const querySnapshot = await getDocs(q);
+        const now = new Date();
+
+        const upcoming = querySnapshot.docs
+          .map((showDoc) => ({
+            id: showDoc.id,
+            ...showDoc.data(),
+          }))
+          .filter((show) => {
+            const showDate = show.date instanceof Timestamp ? show.date.toDate() : new Date(show.date);
+            return show.id !== 'media' && !Number.isNaN(showDate.getTime()) && showDate >= now;
+          });
+
+        setUpcomingShows(upcoming);
+      } catch (error) {
+        console.error('Error fetching shows:', error);
+      }
+    };
+
+    fetchRecapVideo();
     fetchShows();
   }, []);
 
-
   return (
-    <div className="live-music-section">
-      <h1 className="live-music-title">LIVE MUSIC</h1>
-      <div className="video-container" onClick={handleVideoClick}>
-        {showLogo && (
-          <div className="video-logo-overlay">
-            <img src="https://firebasestorage.googleapis.com/v0/b/naturosynth-backend.appspot.com/o/Pictures%2FIcons%2FNSLogoWhite.png?alt=media&token=e2455fd7-4e98-4b0b-a4ae-46902c5c5c2a" alt="Logo" className="logo-image" />
-          </div>
-        )}
-        <video
-          ref={videoRef}
-          className="teaser-video"
-          preload="auto"
-          onEnded={handleVideoEnd}
+    <div className="video-section-split">
+      <div className="section-separator"></div>
+      <div className="video-side">
+        <div 
+          className="video-wrapper" 
+          onClick={handleWrapperClick}
+          onMouseEnter={() => !showLogo && setShowControls(true)}
+          onMouseLeave={() => setShowControls(false)}
         >
-          <source src="https://firebasestorage.googleapis.com/v0/b/naturosynth-backend.appspot.com/o/Videos%2FNaturoSynth%20Concert%20Edit%20Final.mp4?alt=media&token=c69fb5be-8492-4c68-995a-b19af9b3f98e" type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-      {/* Upcoming Shows Section */}
-      <div className="upcoming-shows">
-        <h2 className="show-headers">Upcoming</h2>
-        {upcomingShows.map((show, index) => (
-          <div key={index} className="show">
-            <img
-                src={show.flyer ? require(`../../data/Pictures${show.flyer}`) : ""}
-                alt={show.flyer ? "Show Flyer" : "Show Flyer Not Available"}
-                className="flyer-img"
-              />
-            {show.ticketLink ? (
-              <a href={show.ticketLink} className="ticket-button">
-                Get Tickets
-              </a>
-            ) : show.ticketPrice ? (
-              <p className="ticket-free">{show.ticketPrice}</p>
-            ) : (
-              <p className="ticket-free">Free!</p>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Previous Shows Section */}
-      <div className="previous-shows">
-        <h2 className="show-headers">Previous</h2>
-        {previousShows.length > 0 ? (
-          previousShows.map((show, index) => (
-            <div key={index} className="show">
-              <img
-                src={show.flyer ? require(`../../data/Pictures${show.flyer}`) : ""}
-                alt={show.flyer ? "Show Flyer" : "Show Flyer Not Available"}
-                className="flyer-img"
-              />
-
-              {/* No ticket link for previous shows */}
+          {showLogo && (
+            <div className="video-overlay-minimal">
+              <svg className="play-icon" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" fill="currentColor"/>
+              </svg>
             </div>
-          ))
-        ) : (
-          <p>No previous shows available.</p>
-        )}
+          )}
+          
+          {!showLogo && (
+            <div className={`video-controls-overlay ${showControls ? 'visible' : ''}`}>
+              <button 
+                className="control-btn play-pause-btn"
+                onClick={handleVideoClick}
+                aria-label={isPlaying ? 'Pause' : 'Play'}
+              >
+                {isPlaying ? (
+                  <svg viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                  </svg>
+                )}
+              </button>
+            </div>
+          )}
+          
+          <video
+            ref={videoRef}
+            className="performance-video"
+            preload="auto"
+            onEnded={handleVideoEnd}
+          >
+            {recapVideo && (
+              <source 
+                src={recapVideo} 
+                type="video/mp4" 
+              />
+            )}
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+
+      <div className="section-separator"></div>
+      <div className="shows-side">
+        <h2 className="shows-title">Upcoming Shows</h2>
+        <div className="shows-list">
+          {upcomingShows.length > 0 ? (
+            upcomingShows.map((show) => (
+              <motion.div 
+                key={show.id || `${show.date}-${show.location || show.venue || 'show'}`} 
+                className="show-flyer-card"
+                style={{
+                  backgroundImage: show.flyer 
+                    ? `url(${show.flyer})`
+                    : 'none'
+                }}
+              >
+                <div className="show-card-content">
+                  <div className="show-date">
+                    {show.date instanceof Timestamp 
+                      ? show.date.toDate().toLocaleDateString('en-US', { 
+                          month: 'short', 
+                          day: 'numeric',
+                          year: 'numeric'
+                        })
+                      : new Date(show.date).toLocaleDateString('en-US', { 
+                          month: 'short', 
+                          day: 'numeric',
+                          year: 'numeric'
+                        })
+                    }
+                  </div>
+                  <div className="show-venue">{show.venue || 'TBA'}</div>
+                  <div className="show-location">{show.location || ''}</div>
+                  {(show.ticket_link || show.ticketLink) && (
+                    <a 
+                      href={show.ticket_link || show.ticketLink} 
+                      className="show-tickets-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GET TICKETS
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))
+          ) : (
+            <div className="no-shows">No upcoming shows at the moment. Check back soon!</div>
+          )}
+        </div>
       </div>
     </div>
   );

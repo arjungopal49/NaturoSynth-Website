@@ -1,64 +1,86 @@
-import React, {useEffect, useRef, useState} from "react";
-import {Nav, NavLink, NavMenu, Bars, Image}
-    from "./NavbarElements";
-import pic from "../../data/Pictures/Icons/NSLogoWhite.png"
+import React, { useEffect, useState } from "react";
+import {
+  Nav,
+  CloseIcon,
+  FullscreenMenu,
+  MenuCloseButton,
+  MenuNavLink,
+  MenuContainer,
+  CircleMenuButton,
+  NavLogo
+} from "./NavbarElements";
+
+const logo = require('../../data/Pictures/Icons/NSLogoWhite.png');
 
 const Navbar = () => {
-    const [showNavbar, setShowNavbar] = useState(false)
-    const [windowSize, setWindowSize] = useState([
-        window.innerWidth,
-        window.innerHeight,
-    ]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleWindowResize = () => {
-            setWindowSize([window.innerWidth, window.innerHeight]);
-        };
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-        window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
-    const handleShowNavbar = (bool) => {
-        setShowNavbar(bool)
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
+  }, [isMenuOpen]);
 
-    return (
-        <>
-            <Nav>
-                <a href="/"><Image src = {pic} /></a>
-                {(showNavbar || windowSize[0] > 768) &&
-                    <NavMenu>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/" activeStyle>
-                            Home
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/music" activeStyle>
-                            Music
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/videos" activeStyle>
-                            Videos
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/shows" activeStyle>
-                            Shows
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/merch" activeStyle>
-                            Merch
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/EPK" activeStyle>
-                            EPK
-                        </NavLink>
-                        <NavLink onClick={() => handleShowNavbar(false)} to="/contact" activeStyle>
-                            Contact
-                        </NavLink>
-                    </NavMenu>
-                }
-                <Bars onClick={() => handleShowNavbar(!showNavbar)}/>
-            </Nav>
-        </>
-    );
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const menuLinks = [
+    { to: "/", label: "Home" },
+    { to: "/music", label: "Music" },
+    { to: "/videos", label: "Videos" },
+    { to: "/shows", label: "Shows" },
+    { to: "/merch", label: "Merch" },
+    { to: "/EPK", label: "EPK" },
+    { to: "/contact", label: "Contact" }
+  ];
+
+  return (
+    <>
+      <Nav $isScrolled={isScrolled}>
+        <NavLogo src={logo} alt="NaturoSynth" />
+        <CircleMenuButton onClick={toggleMenu} $isOpen={isMenuOpen}>
+          <span className="line line1"></span>
+          <span className="line line2"></span>
+          <span className="line line3"></span>
+        </CircleMenuButton>
+      </Nav>
+
+      <FullscreenMenu $isOpen={isMenuOpen}>
+        <MenuContainer>
+          {menuLinks.map((link, index) => (
+            <MenuNavLink
+              key={link.to}
+              to={link.to}
+              onClick={closeMenu}
+              $isOpen={isMenuOpen}
+              $delay={0.1 + index * 0.1}
+            >
+              {link.label}
+            </MenuNavLink>
+          ))}
+        </MenuContainer>
+      </FullscreenMenu>
+    </>
+  );
 };
 
 export default Navbar;

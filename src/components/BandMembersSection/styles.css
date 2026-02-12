@@ -1,0 +1,169 @@
+.band-members-section {
+  background: #000000;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.section-separator {
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  opacity: 0.2;
+  margin-bottom: 3rem;
+}
+
+.band-members-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.members-grid {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 4rem calc(50% - 200px) 4rem calc(50% - 200px);
+  align-items: center;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 calc(50% - 200px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.members-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.member-card {
+  flex: 0 0 400px;
+  width: 400px;
+  text-align: center;
+  scroll-snap-align: center;
+  opacity: 0.5;
+  transform: scale(0.75);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.member-card.centered {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+.member-photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-name {
+  font-family: "Staatliches", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .band-members-section {
+    padding: 3rem 0;
+  }
+
+  .section-separator {
+    margin-bottom: 3rem;
+  }
+
+  .band-members-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .members-grid {
+    gap: 2rem;
+    padding: 3rem calc(50% - 150px) 3rem calc(50% - 150px);
+    scroll-padding: 0 calc(50% - 150px);
+  }
+
+  .member-card {
+    flex: 0 0 300px;
+    width: 300px;
+    transform: scale(0.75);
+  }
+  
+  .member-card.centered {
+    transform: scale(1);
+  }
+
+  .member-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .band-members-section {
+    padding: 2rem 0;
+  }
+
+  .section-separator {
+    margin-bottom: 2rem;
+  }
+
+  .band-members-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .members-grid {
+    gap: 1.5rem;
+    padding: 3rem calc(50% - 120px) 3rem calc(50% - 120px);
+    scroll-padding: 0 calc(50% - 120px);
+  }
+  
+  .members-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .member-card {
+    flex: 0 0 240px;
+    width: 240px;
+    transform: scale(0.75);
+  }
+  
+  .member-card.centered {
+    transform: scale(1);
+  }
+
+  .member-name {
+    font-size: 1rem;
+  }
+}

@@ -1,47 +1,100 @@
-.music-section {
-    background-color: #000; /* Black background */
-    padding: 50px 0;
-    text-align: center;
+.music-section-new {
+  background: #000000;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-section-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.releases-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.release-item {
+  flex: 0 0 calc(25% - 1.5rem);
+  max-width: calc(25% - 1.5rem);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.album-cover-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.album-cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .release-item {
+    flex: 0 0 calc(33.333% - 1.5rem);
+    max-width: calc(33.333% - 1.5rem);
   }
-  
-  .music-title {
-    font-size: 128px;
-    font-weight: bold;
-    color: #fff !important; /* White text */
-    margin-top: 200px;
-    margin-bottom: 150px;
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .music-section-new {
+    padding: 4rem 1.5rem;
   }
-  
-  .cover-arts {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows the items to wrap to the next line */
-    gap: 40px;
+
+  .music-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
   }
-  
-  .cover-arts img {
-    width: 400px; /* Size of the cover art */
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s; /* Adds a hover effect */
+
+  .releases-grid {
+    gap: 1.5rem;
   }
-  
-  .cover-arts img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+
+  .release-item {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
   }
-  
-  @media (max-width: 768px) {
-    .cover-arts img {
-      width: 120px; /* Reduce the size on smaller screens */
-    }
+}
+
+@media (max-width: 480px) {
+  .music-section-new {
+    padding: 3rem 1rem;
   }
-  
-  @media (max-width: 480px) {
-    .cover-arts img {
-      width: 100px; /* Further reduce the size on mobile */
-    }
+
+  .music-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
-  
+
+  .releases-grid {
+    gap: 1rem;
+  }
+
+  .release-item {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+}

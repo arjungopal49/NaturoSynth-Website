@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore/lite';
-import { db } from '../../firebase'; // Ensure correct import path for Firebase
-import './styles.css'; // Assuming you're styling through styles.css
+import { motion } from 'framer-motion';
+import { collection, query, orderBy, getDocs } from 'firebase/firestore/lite';
+import { db } from '../../firebase';
+import './styles.css';
 
 const MusicSection = () => {
   const [releases, setReleases] = useState([]);
@@ -10,8 +11,7 @@ const MusicSection = () => {
     const fetchReleases = async () => {
       const q = query(
         collection(db, 'releases'),
-        orderBy('release_date', 'desc'), // Corrected field name
-        // limit(8)
+        orderBy('release_date', 'desc')
       );
       const querySnapshot = await getDocs(q);
       const releasesData = querySnapshot.docs.map(doc => doc.data());
@@ -22,14 +22,31 @@ const MusicSection = () => {
   }, []);
 
   return (
-    <div className="music-section">
-      <h1 className="music-title">MUSIC</h1>
-      <div className="cover-arts">
-      {releases.map((release, index) => (
-        <a href={release.stream_link} target="_blank" rel="noopener noreferrer" key={index}>
-          <img src={release.cover_art_url} alt={`Release ${index}`} className="cover-art" />
-        </a>
-      ))}
+    <div className="music-section-new">
+      <h1 className="music-section-title">
+        DISCOGRAPHY
+      </h1>
+      
+      <div className="releases-grid">
+        {releases.map((release, index) => (
+          <motion.a 
+            href={release.stream_link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            key={index}
+            className="release-item"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="album-cover-container">
+              <img 
+                src={release.cover_art_url} 
+                alt={`${release.name || 'Release'}`} 
+                className="album-cover-image" 
+              />
+            </div>
+          </motion.a>
+        ))}
       </div>
     </div>
   );

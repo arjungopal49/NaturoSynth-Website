@@ -1,15 +1,49 @@
 .footer {
-    background-color: black;
-    color: white;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    color: #ffffff;
     text-align: center;
-    padding: 40px 0;
+    padding: 3rem 2rem;
     width: 100%;
-    font-size: 15px;
-    /* margin-top: 40px; Add some space before the footer */
-    padding-bottom: 60px;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
-  
+    font-family: "Staatliches", sans-serif;
+    border-top: 1px solid rgba(191, 100, 248, 0.3);
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: #aaaaaa;
+}
+
+.footer p:first-child {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer p:first-child {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .footer p:first-child {
+        font-size: 0.9rem;
+    }
+}
