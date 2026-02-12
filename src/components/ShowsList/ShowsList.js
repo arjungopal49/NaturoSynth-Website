@@ -6,11 +6,13 @@ import { collection, getDocs} from 'firebase/firestore/lite';
 
 const ShowsList = () => {
     const [shows, setShows] = useState([]);
+// eslint-disable-next-line no-unused-vars
     const [selectedShow, setSelectedShow] = useState(null);
 
     const openModal = (show) => {
         setSelectedShow(show);
     };
+// eslint-disable-next-line no-unused-vars
 
     const closeModal = () => {
         setSelectedShow(null);

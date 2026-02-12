@@ -8,7 +8,6 @@ import Music from './pages/music';
 import Videos from './pages/videos';
 import Shows from './pages/shows';
 import Merch from './pages/merch';
-import EPK from './pages/epk';
 import Contact from './pages/contact';
 import TestEPKPage from './pages/testEpk';
 

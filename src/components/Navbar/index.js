@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Nav,
-  CloseIcon,
   FullscreenMenu,
-  MenuCloseButton,
   MenuNavLink,
   MenuContainer,
   CircleMenuButton,

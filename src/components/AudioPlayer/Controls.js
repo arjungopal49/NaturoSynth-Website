@@ -20,6 +20,8 @@ const Controls = ({
                       handleNext,
                   }) => {
     const [isPlaying, setIsPlaying] = useState(false);
+// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
     const [volume, setVolume] = useState(60);
     const [muteVolume, setMuteVolume] = useState(false);
 
@@ -48,9 +50,11 @@ const Controls = ({
             audioRef.current.pause();
         }
         playAnimationRef.current = requestAnimationFrame(repeat);
+// eslint-disable-next-line no-unused-vars
     }, [isPlaying, audioRef, repeat]);
 
     const skipForward = () => {
+// eslint-disable-next-line no-unused-vars
         audioRef.current.currentTime += 15;
     };
 

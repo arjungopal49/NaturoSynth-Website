@@ -1,6 +1,4 @@
 import React from "react";
-import { getCollection, getCollectionList } from "../firebase";
-import { useState, useEffect } from "react";
 
 const Merch = () => {
     // const [songs, setSongs] = useState([]);

@@ -8,6 +8,7 @@ import TrackList from './TrackList';
 // import TopBar from './TopBar';
 import './styles.css';
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import art from '../../data/Songs/CoverArts/dance_destiny.jpg'
 
 import { db } from '../../firebase';
@@ -31,6 +32,7 @@ const AudioPlayer = () => {
         if (tracks.length > 0) {
             setCurrentTrack(tracks[trackIndex])
             console.log(currentTrack)
+// eslint-disable-next-line react-hooks/exhaustive-deps
         }
     }, [tracks]);
     
@@ -73,7 +75,7 @@ const AudioPlayer = () => {
             <div className="audio-player">
                 <div className="current-player">
                         <div className="audio-image">
-                            <a target="_blank" href={currentTrack ? currentTrack.link : ""}>
+                            <a target="_blank" rel="noreferrer" href={currentTrack ? currentTrack.link : ""}>
                                 <img src={currentTrack ? require("../../data/Songs" + currentTrack.coverArt) : ""} alt="audio avatar" />
                             </a>
                         </div>

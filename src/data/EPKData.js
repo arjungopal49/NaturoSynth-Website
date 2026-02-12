@@ -1,4 +1,3 @@
-import React from "react";
 import profilePic1 from './Pictures/Profile/profilepic1.jpg';
 import profilePic2 from './Pictures/Profile/profilepic2.JPG';
 import profilePic3 from './Pictures/Profile/profilepic3.JPEG';
@@ -28,6 +27,7 @@ const bioPicSrc = profilePic2;
 
 
 const danceDestinyTxt = "Our latest track \"Dance Destiny\" is an electrifying summer anthem that seamlessly intertwines elements of electronic, disco and psych-pop. Inspired by the profound spiritual concept of reincarnation, the song narrates the timeless tale of two souls, destined to meet and dance across multiple lifetimes, bound by an eternal love. With its punchy bass hooks, bouncy drum grooves, infectious melodies, and ethereal synths, \"Dance Destiny\" invites listeners on a transcendental sonic journey. \"Headphones On\" and \"Fear of Regret\" are our two previous singles that have amassed over 300K streams on Spotify and over 1M views on TikTok. Our other popular tracks come from our 2022 EP, \"In Control\"."
+// eslint-disable-next-line no-unused-vars
 const popularTracksTxt = "Our popular tracks come from \"In Control\", our latest EP. \"In Control\" is a collection of 6 pop songs with elements of funk and psychedelia sprinkled all over it. From the driving 80’s inspired electronic drums, clean funk rhythm guitar and the swelling synthesizers of “Through the Motions”, to the smooth bass guitar riffs, groovy conga rhythms and ambient keys of “No More Love”, each song displays a new sound pallet and thematically, provides a new perspective on the emotional effects of a significant other. The EP dives into how someone may manipulate your mind either positively or negatively in ways you may or may not be able to control.";
 
 const playlists = [

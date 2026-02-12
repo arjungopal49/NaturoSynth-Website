@@ -8,9 +8,9 @@ const EPKContact = () => {
             <h1> Contact Information </h1>
             <div className="contactText">
                 <p> {"Email us at "}
-                    <a href="mailto: naturosynth@gmail.com" target="_blank">naturosynth@gmail.com</a>
+                    <a href="mailto: naturosynth@gmail.com" target="_blank" rel="noreferrer">naturosynth@gmail.com</a>
                     {" or DM us on Instagram: "}
-                    <a href="https://www.instagram.com/naturosynth/" target="_blank">@naturosynth</a>
+                    <a href="https://www.instagram.com/naturosynth/" target="_blank" rel="noreferrer">@naturosynth</a>
                 </p>
             </div>
         </div>

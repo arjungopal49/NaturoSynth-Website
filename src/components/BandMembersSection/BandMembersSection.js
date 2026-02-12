@@ -43,7 +43,6 @@ const BandMembersSection = () => {
     if (scrollContainerRef.current && bandMembers.length > 0) {
       const container = scrollContainerRef.current;
       const cardWidth = getCardWidth();
-      const totalWidth = bandMembers.length * cardWidth;
       
       // Calculate left padding
       let paddingLeft;
@@ -67,6 +66,7 @@ const BandMembersSection = () => {
       // Wait for scroll to settle then update
       setTimeout(() => updateCenteredCard(), 100);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bandMembers]);
   
   // Update which card is centered

@@ -1,8 +1,6 @@
 // Cloudinary Configuration
 // Similar to firebase.js setup
 
-import { CloudinaryContext } from 'cloudinary-react';
-
 // Your Cloudinary Configuration
 // Get these from: https://cloudinary.com/console
 const cloudinaryConfig = {

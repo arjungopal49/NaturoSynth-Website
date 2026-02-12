@@ -56,6 +56,7 @@ export default function TikTokHighlights({ tiktoks, tiktokInfo }) {
     return () => clearInterval(interval);
   }, [items]);
 
+// eslint-disable-next-line no-unused-vars
   const handleArrow = (dir) => {
     if (!items?.length) return;
 

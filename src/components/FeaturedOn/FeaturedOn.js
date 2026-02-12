@@ -13,8 +13,8 @@ const FeaturedOn = ({featuredOnData}) => {
             <div className="bulletList">
                 {featuredOnData.items.map((feature)=>
                     <p className="featuredOnTxt">
-                        <SocialIcon className="iconBulletPoint" url={feature.link} network={getIcon(feature.icon)} target="_blank"/>
-                        <a href={feature.link} target="_blank">{feature.description}</a>
+                        <SocialIcon className="iconBulletPoint" url={feature.link} network={getIcon(feature.icon)} target="_blank" rel="noreferrer"/>
+                        <a href={feature.link} target="_blank" rel="noreferrer">{feature.description}</a>
                     </p>
                 )}
             </div>

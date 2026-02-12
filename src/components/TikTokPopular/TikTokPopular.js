@@ -10,7 +10,7 @@ const TikTokPopular = ({ tiktoks }) => (
         <div className="tiktok-images">
             {tiktoks.map((tt)=>
                 <div className="imageContainer">
-                    <a href={tt.link} target="_blank">
+                    <a href={tt.link} target="_blank" rel="noreferrer">
                         <img className="tiktokImg" src={tt.image} alt={""}/>
                         <img className="tiktokLogo" src={tikTokLogo} alt={""}/>
                     </a>

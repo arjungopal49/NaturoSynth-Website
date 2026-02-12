@@ -32,12 +32,12 @@ const LatestPerformance = () => {
 
     return (
         <div className="latestPerformance">
-            <h1> Latest Show - <a target="_blank" className="whiteLink" href={show ? show.ticketLink : ""}>
+            <h1> Latest Show - <a target="_blank" rel="noreferrer" className="whiteLink" href={show ? show.ticketLink : ""}>
                 {show ? show.title : ""}</a>
             </h1>
             <h4>
                 {show ? show.date.toDate().toLocaleDateString() : ""} -
-                <a target="_blank" className="whiteLink" href={show ? show.ticketLink : ""}>
+                <a target="_blank" rel="noreferrer" className="whiteLink" href={show ? show.ticketLink : ""}>
                     <img className="locationIcon" src={mapIcon} alt={""}/>
                     {show ? show.location : ""}
                 </a>
@@ -50,12 +50,12 @@ const LatestPerformance = () => {
                     {index === show.featuring.length-1 ?
                         <>
                             &&nbsp;
-                            <a target="_blank" href={artist.link}>
+                            <a target="_blank" rel="noreferrer" href={artist.link}>
                                 {artist.name}
                             </a>
                         </> :
                         <>
-                            <a target="_blank" href={artist.link}>
+                            <a target="_blank" rel="noreferrer" href={artist.link}>
                                 {artist.name}
                             </a>,&nbsp;
                         </>
@@ -73,7 +73,7 @@ const LatestPerformance = () => {
                 {show && show.press.map((press)=>
                     <>
                         &nbsp;&nbsp;&nbsp;
-                        <a target="_blank" href={press.link}>{press.name}</a>
+                        <a target="_blank" rel="noreferrer" href={press.link}>{press.name}</a>
                     </>
                 )}
             </h5>
