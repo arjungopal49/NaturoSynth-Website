@@ -35,7 +35,7 @@ export function initMusicStack(section, stId) {
       // ── selection knobs ──
       const frontPushVW = 12;
       const behindPushVW = 12;
-      const activeLiftVH = isMobile ? -10 : -10;
+      const activeLiftVH = isMobile ? -35 : -10;
       const frontMarginVH = isMobile ? 30 : 20;
       const behindMarginVH = isMobile ? -30 : -60;
       const selEase = "power2.inOut";
