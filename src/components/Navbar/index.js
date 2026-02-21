@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Nav,
   FullscreenMenu,
@@ -43,8 +44,7 @@ const Navbar = () => {
 
   const menuLinks = [
     { to: "/", label: "Home" },
-    { to: "/music", label: "Music" },
-    { to: "/videos", label: "Videos" },
+    { to: "/discography", label: "Discography" },
     { to: "/shows", label: "Shows" },
     { to: "/merch", label: "Merch" },
     { to: "/EPK", label: "EPK" },
@@ -54,7 +54,9 @@ const Navbar = () => {
   return (
     <>
       <Nav $isScrolled={isScrolled}>
-        <NavLogo src={logo} alt="NaturoSynth" />
+        <Link to="/" style={{ position: 'absolute', left: '2rem', zIndex: 10000, pointerEvents: 'all' }}>
+          <NavLogo src={logo} alt="NaturoSynth" />
+        </Link>
         <CircleMenuButton onClick={toggleMenu} $isOpen={isMenuOpen}>
           <span className="line line1"></span>
           <span className="line line2"></span>

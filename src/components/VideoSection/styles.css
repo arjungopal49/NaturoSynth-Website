@@ -145,15 +145,15 @@
   overflow-y: visible;
   padding-bottom: 1rem;
   padding-top: 0.5rem;
-  padding-left: 6rem;
-  padding-right: 3rem;
+  padding-left: clamp(1rem, 5vw, 6rem);
+  padding-right: clamp(1rem, 3vw, 3rem);
   scrollbar-width: thin;
   scrollbar-color: #6495ed rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 1200px;
   justify-content: flex-start;
   align-items: flex-end;
-  min-height: 510px;
+  min-height: clamp(360px, 40vw, 510px);
 }
 
 .shows-list::-webkit-scrollbar {
@@ -175,18 +175,18 @@
 }
 
 .show-flyer-card {
-  flex: 0 0 320px;
-  height: 480px;
+  flex: 0 0 clamp(220px, 25vw, 320px);
+  aspect-ratio: 2 / 3;
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.75rem;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
   position: relative;
   cursor: pointer;
-  transition: height 0.3s ease, flex-basis 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: none;
   overflow: hidden;
 }
@@ -208,8 +208,7 @@
 }
 
 .show-flyer-card:hover {
-  flex-basis: 328px;
-  height: 495px;
+  transform: scale(1.03);
   box-shadow: 0 15px 50px rgba(100, 149, 237, 0.4);
 }
 
@@ -286,27 +285,9 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .shows-side {
-    padding: 0 0 3rem 0;
-  }
-
   .shows-list {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .show-flyer-card {
-    flex: 0 0 280px;
-    height: 420px;
-  }
-
-  .show-flyer-card:hover {
-    flex-basis: 286px;
-    height: 435px;
-  }
-
-  .shows-list {
-    min-height: 455px;
   }
 
   .play-icon {
@@ -326,17 +307,9 @@
 }
 
 @media (max-width: 768px) {
-  .shows-side {
-    padding: 0 0 3rem 0;
-  }
-
   .shows-list {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .shows-title {
-    font-size: 1.8rem;
   }
 
   .play-icon {
@@ -352,21 +325,6 @@
   .control-btn svg {
     width: 26px;
     height: 26px;
-  }
-
-  .show-flyer-card {
-    flex: 0 0 260px;
-    height: 400px;
-    padding: 1.5rem;
-  }
-
-  .show-flyer-card:hover {
-    flex-basis: 266px;
-    height: 415px;
-  }
-
-  .shows-list {
-    min-height: 435px;
   }
 
   .show-flyer-card .show-venue {
@@ -388,10 +346,6 @@
     padding-right: 1rem;
   }
 
-  .shows-title {
-    font-size: 1.5rem;
-  }
-
   .play-icon {
     width: 50px;
     height: 50px;
@@ -405,21 +359,6 @@
   .control-btn svg {
     width: 24px;
     height: 24px;
-  }
-
-  .show-flyer-card {
-    flex: 0 0 240px;
-    height: 360px;
-    padding: 1.25rem;
-  }
-
-  .show-flyer-card:hover {
-    flex-basis: 245px;
-    height: 373px;
-  }
-
-  .shows-list {
-    min-height: 393px;
   }
 
   .show-flyer-card .show-venue {

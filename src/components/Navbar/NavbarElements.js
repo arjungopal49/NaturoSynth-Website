@@ -29,15 +29,11 @@ export const Nav = styled.nav`
 `;
 
 export const NavLogo = styled.img`
-  position: absolute;
-  left: 2rem;
   height: 3rem;
   width: auto;
   filter: drop-shadow(0 0 10px rgba(100, 149, 237, 0.6));
-  pointer-events: all;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 10000;
   
   &:hover {
     filter: drop-shadow(0 0 20px rgba(100, 149, 237, 0.9));

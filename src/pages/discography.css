@@ -1,0 +1,528 @@
+.discography-page {
+  min-height: 100vh;
+  background: #151515;
+  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+  height: 100vh;
+  perspective-origin: 50% 35%;
+  will-change: transform, filter, opacity;
+}
+
+/* ScrollTrigger's pin-spacer wrapper — prevent white bleed */
+body.discography-active,
+body.discography-active .pin-spacer {
+  background: #151515;
+}
+
+.discography-inner {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.discography-title {
+  margin: 0;
+  padding: 2rem 2rem 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.discography-status {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+.release-stack {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.root {
+  height: 100%;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.music-single {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 55vh;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  background: #000;
+  transition: ease width 0.3s;
+  transition-delay: 0s;
+  pointer-events: all;
+  margin-top: 80vh;
+  will-change: margin;
+}
+
+/* Dark overlay pseudo-element for dimming non-active cards */
+.music-single::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  transition-delay: 0s;
+}
+
+.music-single.is-front::after,
+.music-single.is-behind::after {
+  opacity: 0.6;
+  transition-delay: 0.5s;
+}
+
+.music-single.is-active {
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.music-single.is-active a,
+.music-single.is-active button {
+  pointer-events: all;
+}
+
+.music-single.is-active:hover .release-cover {
+  margin-top: 0 !important;
+}
+
+.music-single.is-active .release-cover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
+}
+
+.music-single.is-front {
+  z-index: 20;
+  pointer-events: none;
+}
+
+.music-single.is-behind {
+  z-index: 10;
+  pointer-events: none;
+}
+
+.release-cover-button {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+}
+
+.release-cover-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.release-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #111;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  transition: margin 0.6s ease;
+  pointer-events: none;
+  margin-top: 0;
+}
+
+.music-single:hover .release-cover {
+  margin-top: -4%;
+}
+
+.release-cover-button:hover .release-cover,
+.release-cover-button:focus-visible .release-cover {
+  margin-top: -4%;
+}
+
+.release-label {
+  display: none;
+}
+
+/* ── Info Panel (right half on desktop, bottom on mobile) ── */
+
+.release-info-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  background: transparent;
+  padding: 3rem 3.5vw 3rem 2.5vw;
+  z-index: 10000;
+  color: #fff;
+  animation: panelFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.release-info-content {
+  max-height: 80vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.5rem;
+}
+
+.release-info-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.release-info-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.release-info-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.release-info-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.release-info-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+
+.release-info-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.release-info-title {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  padding-right: 2.5rem;
+}
+
+.release-info-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+}
+
+.release-info-meta:has(+ .release-part-of) {
+  margin-bottom: 0.4rem;
+}
+
+.release-type-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.release-info-date {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.release-part-of {
+  margin: 0 0 1.2rem;
+  font-size: 0.82rem;
+  opacity: 0.5;
+  letter-spacing: 0.02em;
+}
+
+.release-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
+}
+
+.release-info-section {
+  margin-top: 1.3rem;
+}
+
+.release-info-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.release-chip-link {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  padding: 0.36rem 0.74rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.release-chip-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.release-track-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.release-track-list li + li {
+  margin-top: 0.2rem;
+}
+
+/* ── Track accordion ── */
+
+.track-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-accordion-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.track-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.track-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.7rem 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: opacity 0.2s ease;
+}
+
+.track-accordion-header:hover {
+  opacity: 0.7;
+}
+
+.track-accordion-number {
+  opacity: 0.4;
+  font-size: 0.82rem;
+  min-width: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.track-accordion-title {
+  flex: 1;
+  font-weight: 500;
+}
+
+.track-accordion-arrow {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.track-accordion-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+.track-accordion-body {
+  padding: 0 0 0.8rem 2rem;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  opacity: 0.7;
+  overflow: hidden;
+  animation: accordionSlideDown 0.3s ease both;
+}
+
+@keyframes accordionSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+.release-copy-block h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.release-copy-block p {
+  margin: 0;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  opacity: 0.85;
+}
+
+.release-copy-block + .release-copy-block {
+  margin-top: 0.7rem;
+}
+
+.release-video-embed {
+  margin-top: 0.8rem;
+}
+
+.release-video-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.82rem;
+  opacity: 0.6;
+  letter-spacing: 0.03em;
+}
+
+.release-video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.release-video-responsive iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+.release-fallback-text {
+  margin: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .discography-title {
+    padding: 1.5rem 1.5rem 1rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .music-single {
+    width: 55vw;
+  }
+
+  .music-single:hover .release-cover {
+    margin-top: 0%;
+  }
+
+  .music-single.is-active {
+    width: 80vw;
+    transition-delay: 0.5s;
+  }
+
+  .release-info-panel {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    justify-content: flex-start;
+    padding: 1.5rem 1.5rem 2rem;
+    background: rgba(12, 12, 12, 0.95);
+    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    animation: panelSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .release-info-content {
+    max-height: 100%;
+  }
+
+  @keyframes panelSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .discography-title {
+    padding: 1.2rem 1rem 0.8rem;
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .release-info-panel {
+    height: 50vh;
+    padding: 1.2rem 1.2rem 1.5rem;
+  }
+
+  .release-info-title {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+}
