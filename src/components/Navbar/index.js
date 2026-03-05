@@ -47,8 +47,7 @@ const Navbar = () => {
     { to: "/discography", label: "Discography" },
     { to: "/shows", label: "Shows" },
     { to: "/merch", label: "Merch" },
-    { to: "/EPK", label: "EPK" },
-    { to: "/contact", label: "Contact" }
+    { to: "/EPK", label: "EPK" }
   ];
 
   return (

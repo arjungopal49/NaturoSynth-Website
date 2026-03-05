@@ -7,7 +7,6 @@ import Home from './pages/home';
 import Discography from './pages/discography';
 import Shows from './pages/shows';
 import Merch from './pages/merch';
-import Contact from './pages/contact';
 import TestEPKPage from './pages/testEpk';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
               <Route path='/shows' element={<Shows/>} />
               <Route path='/merch' element={<Merch/>} />
               <Route path='/epk' element={<TestEPKPage/>} />
-              <Route path='/contact' element={<Contact/>} />
             </Routes>
           </Router>
       </div>

@@ -26,6 +26,12 @@ const Home = () => {
             <div className="social-links-section">
                 <h2 className="social-section-title">CONNECT WITH US</h2>
                 <SocialLogos floating={false} />
+                <p className="contact-line">
+                    For bookings and inquiries &mdash;{" "}
+                    <a href="mailto:naturosynth@gmail.com">mgmt@naturosynth.com</a>
+                    {" "}or{" "}
+                    <a href="https://www.instagram.com/naturosynth/" target="_blank" rel="noopener noreferrer">DM us on Instagram</a>
+                </p>
             </div>
             
             {/* Footer */}
